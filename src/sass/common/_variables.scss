@@ -1,0 +1,19 @@
+// Colors
+
+$primary: #31a9ab;
+$primary-ligth: #5df4c9;
+$primary-dark: #004c54;
+
+$secondary: #9b51e0;
+$secondary-dark: #3b086a;
+
+$grey: #f2f2f2;
+$grey-dark: #676767;
+$white: #ffffff;
+
+$main-gradient: linear-gradient(180deg, $secondary 0%, $primary 100%);
+$grey-gradient: linear-gradient(
+  269.59deg,
+  #ffffff 6.98%,
+  rgba(242, 242, 242, 0) 104.06%
+);
