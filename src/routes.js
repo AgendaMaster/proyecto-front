@@ -24,7 +24,7 @@ export const RenderRoutes = ({ routes }) => {
 
 // Este es un arreglo donde irán todas las rutas de nuestra App ;)
 const ROUTES = [
-  { path: '/', key: 'ROOT', exact: true, component: () => <h1>Log in</h1> },
+  { path: '/', key: 'LANDING', exact: true, component: () => <h1>Log in</h1> },
   {
     path: '/app',
     key: 'APP',
@@ -35,12 +35,6 @@ const ROUTES = [
         key: 'APP_ROOT',
         exact: true,
         component: () => <h1>App Index</h1>,
-      },
-      {
-        path: '/app/page',
-        key: 'APP_PAGE',
-        exact: true,
-        component: () => <h1>App Page</h1>,
       },
     ],
   },

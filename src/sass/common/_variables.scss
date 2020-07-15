@@ -7,7 +7,9 @@ $primary-dark: #004c54;
 $secondary: #9b51e0;
 $secondary-dark: #3b086a;
 
+$app-background: #f5f6fa;
 $grey: #f2f2f2;
+$grey-medium: #d3d3d3;
 $grey-dark: #676767;
 $white: #ffffff;
 
@@ -17,3 +19,11 @@ $grey-gradient: linear-gradient(
   #ffffff 6.98%,
   rgba(242, 242, 242, 0) 104.06%
 );
+
+// Sizes
+$header-size: 80px;
+
+// Typography
+$titles: Poppins;
+$paragraphs-primary: Poppins;
+$paragraphs-secondary: Roboto;

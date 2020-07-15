@@ -1,0 +1,30 @@
+@import './../../common/variables';
+
+.Layout {
+  display: grid;
+  grid-template:
+    'header   header header   ' $header-size
+    'nav      main   calendar ' 1fr
+    'footer   footer footer   ' 65px /
+    80px 1fr 300px;
+  min-height: 100vh;
+  &-main {
+    grid-area: main;
+  }
+}
+
+.AppHeader {
+  grid-area: header;
+}
+.NavDrawer {
+  background: $white;
+  grid-area: nav;
+}
+.CalendarDrawer {
+  background-color: $white;
+  grid-area: calendar;
+}
+.Footer {
+  background-color: white;
+  grid-area: footer;
+}
