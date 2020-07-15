@@ -1,0 +1,19 @@
+@import './../../common/variables';
+.Footer {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  color: $white;
+  border-top: 4px solid $primary-ligth;
+  background-color: $primary;
+  &-infoLink {
+    margin-right: 15px;
+    color: $white;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    &:hover {
+      color: $grey-medium;
+    }
+  }
+}

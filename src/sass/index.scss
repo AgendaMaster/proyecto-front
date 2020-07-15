@@ -1,0 +1,29 @@
+@import './common/variables';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $paragraphs-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $app-background;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $titles;
+}
+img {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}

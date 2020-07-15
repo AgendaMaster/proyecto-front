@@ -1,0 +1,36 @@
+@import './../../common/variables';
+.AppHeader {
+  display: grid;
+  grid-template-columns: 100px 1fr 200px;
+  align-items: center;
+  background-color: $white;
+  box-shadow: 0 1px 30px #71707080;
+  z-index: 10;
+  &-logo figure {
+    margin: 0 auto;
+    width: $header-size - 30px;
+  }
+}
+.SearchBar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $header-size - 40px;
+  max-width: 500px;
+  overflow: hidden;
+  border: 1px solid $grey-medium;
+  border-radius: $header-size;
+  &-input {
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    font-size: 1em;
+    color: $grey-medium;
+    outline: none;
+    border: 0;
+  }
+  &-icon {
+    position: absolute;
+    left: 10px;
+  }
+}
