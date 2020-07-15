@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './../../sass/components/layout/Footer.scss';
 
 const SocialMediaLink = ({ route, icon }) => (
   <a href={route} target='__blank' className='SocialMediaLink'>
