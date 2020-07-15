@@ -6,21 +6,27 @@ import { isAuthenticated } from '../helpers/Authentication';
   AuthenticatedRoute
   should be used for routes which require authentication
 */
-export function AuthenticatedRoute({ component: Component, path }) {
-  if (!isAuthenticated()) {
-    return <Redirect to='/login' />;
+export function AuthenticatedRoute({ component: Component, path, exact }) {
+  if (isAuthenticated()) {
+    return <Route component={Component} path={path} exact={exact} />;
   }
 
-  return <Route component={Component} path={path} />;
+  return <Redirect to='/login' />;
 }
+
 /*
   AuthenticatedRoute
   should be used for routes which not require authentication
 */
-export function UnauthenticatedRoute({ component: Component, path }) {
-  if (isAuthenticated()) {
+export function UnauthenticatedRoute({
+  component: Component,
+  path,
+  exact,
+  redirect,
+}) {
+  if (isAuthenticated() && redirect) {
     return <Redirect to='/dashboard' />;
   }
 
-  return <Route component={Component} path={path} />;
+  return <Route component={Component} path={path} exact={exact} />;
 }

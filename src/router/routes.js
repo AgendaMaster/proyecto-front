@@ -1,22 +1,26 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { Login } from './../pages/Login';
+import { Landing } from './../pages/Landing';
+import { Event } from './../pages/Event';
+import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
-const RouteWithSubRoutes = (route) => {
-  return (
-    <Route
-      path={route.path}
-      exact={route.exact}
-      render={(props) => <route.component {...props} routes={route.routes} />}
-    />
-  );
-};
-
-export const RenderRoutes = ({ routes }) => {
+export const RenderRoutes = () => {
   return (
     <Switch>
-      {routes.map((route, i) => {
-        return <RouteWithSubRoutes key={route.key} {...route} />;
+      {ROUTES.map(({ auth, exact, key, path, redirect, component }) => {
+        const AuthRoute = auth ? AuthenticatedRoute : UnauthenticatedRoute;
+        return (
+          <AuthRoute
+            key={key}
+            exact={exact}
+            component={component}
+            path={path}
+            redirect={redirect}
+          />
+        );
       })}
+
       <Route component={() => <h1>Not Found!</h1>} />
     </Switch>
   );
@@ -24,19 +28,35 @@ export const RenderRoutes = ({ routes }) => {
 
 // Este es un arreglo donde irán todas las rutas de nuestra App ;)
 const ROUTES = [
-  { path: '/', key: 'LANDING', exact: true, component: () => <h1>Log in</h1> },
   {
-    path: '/app',
-    key: 'APP',
-    component: RenderRoutes,
-    routes: [
-      {
-        path: '/app',
-        key: 'APP_ROOT',
-        exact: true,
-        component: () => <h1>App Index</h1>,
-      },
-    ],
+    path: '/',
+    key: 'LANDING',
+    exact: true,
+    component: Landing,
+    auth: false,
+    redirect: false,
+  },
+  {
+    path: '/login',
+    key: 'LOGIN',
+    exact: true,
+    component: Login,
+    auth: false,
+    redirect: true,
+  },
+  {
+    path: '/dashboard',
+    key: 'DASHBOARD',
+    exact: true,
+    component: Event,
+    auth: true,
+  },
+  {
+    path: '/event/:eventId',
+    key: 'EVENT',
+    exact: true,
+    component: Event,
+    auth: true,
   },
 ];
 
