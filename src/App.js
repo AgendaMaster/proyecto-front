@@ -1,5 +1,5 @@
 import React from 'react';
-import ROUTES, { RenderRoutes } from './routes';
+import ROUTES, { RenderRoutes } from './router/routes';
 import { Layout } from './components/layout';
 
 function App() {

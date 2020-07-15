@@ -4,7 +4,7 @@ import { AppHeader } from './AppHeader';
 import { NavDrawer } from './NavDrawer';
 import { CalendarDrawer } from './CalendarDrawer';
 import { Footer } from './Footer';
-import ROUTES from './../../routes';
+import ROUTES from './../../router/routes';
 import './../../sass/components/layout/index.scss';
 
 export function Layout({ children }) {
