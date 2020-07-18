@@ -1,10 +1,10 @@
 import React from 'react';
-import ROUTES, { RenderRoutes } from './router/routes';
+import { RenderRoutes } from './router/routes';
 import { Layout } from './components/layout';
 
 function App() {
   return (
-    <Layout routes={ROUTES}>
+    <Layout>
       <RenderRoutes />
     </Layout>
   );
