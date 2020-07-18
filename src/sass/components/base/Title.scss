@@ -1,0 +1,33 @@
+@import './../../common/variables';
+
+.Title {
+  position: relative;
+  color: $primary;
+  font-weight: bold;
+  line-height: 91%;
+  text-align: center;
+  vertical-align: top;
+  letter-spacing: 0.8em;
+  margin-top: 2em;
+  &:after {
+    content: attr(data-title);
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 3em;
+    letter-spacing: initial;
+    opacity: 0.1;
+    z-index: -1;
+  }
+  &-1 {
+    font-size: 36px;
+  }
+  &-2 {
+    font-size: 28px;
+  }
+  &-3 {
+    font-size: 24px;
+  }
+}
