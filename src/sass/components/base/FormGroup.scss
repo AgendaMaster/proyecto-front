@@ -1,0 +1,22 @@
+@import './../../common/variables';
+
+.FromGroup {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    max-width: 940px;
+    margin-bottom: 30px;
+    align-items: center;
+    span {
+        font-family: $titles;
+        color: $primary;
+        font-weight: bold;
+        letter-spacing: $common-spacing;
+    }
+    &__label {
+        width: 30%;
+    }
+    &__input {
+        width: 60%
+    }
+}
