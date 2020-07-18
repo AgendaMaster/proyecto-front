@@ -9,6 +9,7 @@
   vertical-align: top;
   letter-spacing: 0.8em;
   margin-top: 2em;
+  margin-bottom: 2em;
   &:after {
     content: attr(data-title);
     position: absolute;
@@ -29,5 +30,14 @@
   }
   &-3 {
     font-size: 24px;
+  }
+}
+
+.Color {
+  &-primary {
+    color: $primary
+  }
+  &-secondary {
+    color: $secondary
   }
 }

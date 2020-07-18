@@ -1,5 +1,5 @@
 import React from 'react';
-import './../../sass/components/base/Title.scss';
+import './../../sass/components/base/StyledTitle.scss';
 
 /**
  * Renderiza el título doble.
