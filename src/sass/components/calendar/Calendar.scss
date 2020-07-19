@@ -1,0 +1,11 @@
+@import '../../common/variables';
+
+.Calendar {
+  max-width: 80%;
+  margin: 0 auto;
+
+  &-container {
+    padding: 20px;
+    background: #FFF;
+  }
+}
