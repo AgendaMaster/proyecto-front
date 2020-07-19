@@ -1,0 +1,52 @@
+@import '../../common/variables';
+
+
+.EventTag-Render {
+  // display: grid;
+  //grid-template-columns: 1fr;
+  //grid-template-rows: repeat(4, 30px);
+  div {
+    min-height: 30px;
+  }
+  .border-bottom {
+    border-bottom: 1px solid #CCC;
+  }
+}
+.EventTag {
+  display: flex;
+  padding: 10px;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+  border-left: 5px solid #000;
+  background: beige;
+  margin-bottom: 5px;
+  position: absolute;
+  z-index: 99;
+  width: -webkit-fill-available;
+
+  &-info {
+    width: 70%;
+    padding: 10px;
+  }
+
+  &-avatar {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .cover {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+}
