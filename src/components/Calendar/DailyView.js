@@ -54,7 +54,19 @@ export function DailyView() {
 
   return (
     <div className='DailyView'>
+      <div className='DailyView-item-hour'>
       {
+        [...Array(24)].map((e, i) =>
+          <div>{printTime(i+1)}</div>
+        )
+      }
+      </div>
+      <div className='DailyView-item-event'>
+      {
+        MOCK_EVENT_TAG.map(evento => <EventTag info={ evento } />)
+      }
+      </div>
+      {/*
         MOCK_TIME.map((time) => <div className='DailyView-item' key={`${Math.random()}-${Math.round(new Date().getTime() / 1000)}`}>
           <div className='DailyView-item-hour'>
             {printTime(time)}
@@ -63,7 +75,7 @@ export function DailyView() {
             { MOCK_EVENT_TAG.map(evento => <EventTag info={ evento } time={time} />)}
           </div>
         </div>)
-      }
+      */}
     </div>
   );
 }

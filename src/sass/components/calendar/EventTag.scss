@@ -17,12 +17,37 @@
   padding: 10px;
   border-top-right-radius: 23px;
   border-bottom-right-radius: 23px;
-  border-left: 5px solid #000;
+  border: 5px solid;
   background: beige;
   margin-bottom: 5px;
   position: absolute;
   z-index: 99;
   width: -webkit-fill-available;
+  border-color: transparent;
+  cursor: pointer;
+
+  &.single-line {
+    padding: 0;
+    .EventTag-info {
+      display: flex;
+      padding: 0 10px;
+    }
+    .EventTag-avatar {
+      .cover {
+        width: 40px;
+        height: 40px;
+      }
+      p {
+        display: none;
+      }
+    }
+  }
+  &:hover {
+    z-index: 199;
+    border-bottom-color: rgb(241, 144, 114);
+    border-top-color: rgb(241, 144, 114);
+    border-right-color: rgb(241, 144, 114);
+  }
 
   &-info {
     width: 70%;

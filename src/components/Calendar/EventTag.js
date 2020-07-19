@@ -3,7 +3,6 @@ import '../../sass/components/calendar/EventTag.scss'
 
 export function EventTag ({ info, time }) {
   console.log(info)
-  console.log(time)
 
   const getDate = (myDate) => {
     return `${myDate.getDate()} - ${myDate.toLocaleString('default', { month: 'long' })}`;
@@ -12,29 +11,36 @@ export function EventTag ({ info, time }) {
   const getStartTime = (myDate) => `${myDate.toLocaleString('default', { hourCycle: 'h12', hour: '2-digit', minute: '2-digit' })}`;
   const getEndTime = (myDate) => `${myDate.toLocaleString('default', { hourCycle: 'h12', hour: '2-digit', minute: '2-digit' })}`;
 
-  const isOnTime = (start, time) => {
-    const startHours = new Date(start).getHours()
-    const startMinutes = new Date(start).getMinutes()
-    console.log('start :: ', startHours)
-    console.log('time :: ', startMinutes)
+  const convertTimeToPixel = (startTime) => {
+    const compensation = 60;
+    const hoursPixelValue = 120;
+    const minutesPixelValue = 30;
+    const hours = startTime.getHours() - 1;
 
-    let result = false
+    const minutes = Math.round(startTime.getMinutes() / 15);
 
-    if (startHours === (time - 1)) {
-      if (startMinutes > 30) result = true
-    } else if (startHours === time) {
-      if (startMinutes <= 30) result = true
-    }
+    return (hours * hoursPixelValue) + (minutes * minutesPixelValue) + compensation;
+  }
+
+  const convertTimeToHeight = (startTime, endtime) => {
+    const diffTimeInMinutes = (endtime.getTime() - startTime.getTime()) / (1000 * 60);
+    const minutesToPixels = Math.round(diffTimeInMinutes / 15) * 30
+    return minutesToPixels
+  }
+
+  const getExtraClass = (height) => {
+    let result = ''
+    if (height === 60) result = 'single-line'
 
     return result
   }
 
-  const renderHere = (minutes, min, max) => {
-    return minutes >=min && minutes <=max ? true : false
-  }
+  const renderTagInfo = (info) => {
 
-  const renderTagInfo = (info) => (
-    <div className='EventTag' style={{ backgroundColor:`${info.color}`, borderLeftColor:`${info.border}` }}>
+    const itemHeight = convertTimeToHeight(info.start, info.end);
+    const extraClass = getExtraClass(itemHeight)
+
+    return (<div className={`EventTag ${extraClass}`} style={{ backgroundColor:`${info.color}`, borderLeftColor:`${info.border}`, top: `${convertTimeToPixel(info.start)}px`, height: `${itemHeight}px` }}>
       <div className='EventTag-info'>
         <p>{info.name }</p>
         <p>{getDate(info.start)} {getStartTime(info.start)} - {getEndTime(info.end)}</p>
@@ -45,49 +51,12 @@ export function EventTag ({ info, time }) {
         </div>
         <p>{info.people}</p>
       </div>
-    </div>
-  )
-
-  const renderTag = (info) => {
-    const minutes = info.start.getMinutes()
-    return (<div className='EventTag-Render'>
-      <div>
-        { renderHere(minutes, 30, 44) && renderTagInfo(info) }
-        [YEP] first half {time - 1}:30 - 45
-      </div>
-      <div className='border-bottom'>
-      { renderHere(minutes, 45, 59) && renderTagInfo(info) }
-        [YEP] first half {time - 1}:45 - 00
-      </div>
-      <div>
-      { renderHere(minutes, 0, 14) && renderTagInfo(info) }
-        [YEP]second half {time}: 00 - 15
-      </div>
-      <div>
-      { renderHere(minutes, 15, 29) && renderTagInfo(info) }
-        [YEP]second half {time}: 15 - 30
-      </div>
     </div>)
   }
 
-  const noRenderTag = () => (
-    <div className='EventTag-Render Norender'>
-      <div>
-      </div>
-      <div className='border-bottom'>
-      </div>
-      <div>
-      </div>
-      <div>
-      </div>
-    </div>
-  )
-
   return (
     <>
-    {
-      isOnTime(info.start, time) ? renderTag(info) : noRenderTag()
-    }
+      { renderTagInfo(info) }
     </>
   )
 }
