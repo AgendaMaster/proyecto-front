@@ -27,10 +27,17 @@
   cursor: pointer;
 
   &.single-line {
-    padding: 0;
+    padding: 0 0 0 10px;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
     .EventTag-info {
       display: flex;
       padding: 0 10px;
+
+      p {
+        margin: 0 10px 0 0;
+      }
     }
     .EventTag-avatar {
       .cover {
@@ -52,6 +59,9 @@
   &-info {
     width: 70%;
     padding: 10px;
+    p {
+      margin: 0;
+    }
   }
 
   &-avatar {
