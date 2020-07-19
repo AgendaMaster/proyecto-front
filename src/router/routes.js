@@ -42,7 +42,7 @@ const ROUTES = [
     exact: true,
     component: Login,
     auth: false,
-    redirect: true,
+    redirect: false,
   },
   {
     path: '/dashboard',
