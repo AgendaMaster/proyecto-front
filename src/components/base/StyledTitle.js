@@ -10,7 +10,7 @@ import './../../sass/components/base/StyledTitle.scss';
 const StyledTitle = ({ text, level, color }) => {
   return (
     <div
-      className={`Title level-${level} Color-${color}`}
+      className={`Title--level-${level} Title--color-${color}`}
       data-title={text}
     >
       {text}
