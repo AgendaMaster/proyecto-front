@@ -1,0 +1,30 @@
+@import '../../common/variables';
+
+.Calendar {
+  &-container {
+    .DailyView {
+      display: flex;
+      flex-direction: column;
+
+      &-item {
+        width: 100%;
+        display: grid;
+        column-gap: 10px;;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: 120px;
+
+        &-hour {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: red;
+        }
+
+        &-event {
+          background-color: green;
+          position: relative;
+        }
+      }
+    }
+  }
+}
