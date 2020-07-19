@@ -27,20 +27,4 @@ img {
 a {
   text-decoration: none;
 }
-input {
-  border-radius: 20px;
-  color: $primary;
-  border: 1px solid $primary;
-  background-color: rgba($primary, 0.1);
-  width: 100%;
-  height: 35px;
-  padding: 5px 10px;
-  outline: none;
-  text-align: center;
-  letter-spacing: 3px;
-  &:hover,
-  &:active,
-  &:focus {
-    border: 2px solid rgba($primary, 0.8);
-  }
-}
+
