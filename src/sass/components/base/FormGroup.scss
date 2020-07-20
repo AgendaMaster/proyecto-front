@@ -1,0 +1,40 @@
+@import '../../common/variables';
+@import '../../mixins/input';
+
+.FormGroup {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 940px;
+  margin-bottom: 30px;
+  align-items: center;
+  color: $primary; //default
+  span {
+    font-family: $titles;
+    font-weight: bold;
+    letter-spacing: $common-spacing;
+  }
+  input {
+    @include input($primary); //default
+  }
+  &--color {
+    &-primary {
+      color: $primary;
+      input {
+        @include input($primary);
+      }
+    }
+    &-secondary {
+      color: $secondary;
+      input {
+        @include input($secondary);
+      }
+    }
+  }
+  &__label {
+    width: 30%;
+  }
+  &__input {
+    width: 60%;
+  }
+}
