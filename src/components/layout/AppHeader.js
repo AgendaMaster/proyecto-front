@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Logo from './../../assets/images/logo.svg';
 import './../../sass/components/layout/AppHeader.scss';
@@ -14,7 +14,7 @@ export function AppHeader({ user = {} }) {
         </figure>
       </Link>
       <div className='SearchBar'>
-        <i className='SearchBar-icon'>S</i>
+        <FontAwesomeIcon className='SearchBar-icon' icon={faSearch} />
         <input placeholder='Search' className='SearchBar-input' type='text' />
       </div>
       <div className='AppHeader-userInfo'>
@@ -23,7 +23,11 @@ export function AppHeader({ user = {} }) {
           <strong className='Acount-name'>{user.name}</strong>
         </div>
         <div className='Notifications'>
-          <FontAwesomeIcon className='Notifications-icon' icon={faBell} />
+          <FontAwesomeIcon
+            className='Notifications-icon'
+            icon={faBell}
+            size='lg'
+          />
         </div>
       </div>
     </div>

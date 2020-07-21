@@ -2,11 +2,13 @@
 .Footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 15px;
   color: $white;
   border-top: 4px solid $primary-ligth;
   background-color: $primary;
-  &-infoLink {
+  &-infoLink,
+  .SocialMediaLink {
     margin-right: 15px;
     color: $white;
     letter-spacing: 4px;

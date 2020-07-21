@@ -1,0 +1,17 @@
+@import './../common/variables';
+.Suggestions {
+  &-title {
+    margin-bottom: 15px;
+    color: $secondary;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+}
+.SuggestionItem {
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  color: $secondary;
+  border-left: 3px solid $secondary;
+  background-color: $secondary-light;
+}
