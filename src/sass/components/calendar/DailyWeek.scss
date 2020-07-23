@@ -2,9 +2,9 @@
 
 .Calendar {
   &-container {
-    .DailyView {
+    .DailyWeek {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
       column-gap: 10px;
 
       &-item {

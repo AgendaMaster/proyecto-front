@@ -1,9 +1,11 @@
 import React from 'react'
 import { EventTag } from './EventTag'
-import '../../sass/components/calendar/DailyView.scss'
+import '../../sass/components/calendar/DailyWeek.scss'
 
-export function DailyView({ config }) {
-
+export function WeekView({ config }) {
+  const MOCK_DAYS = [
+    'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
+  ]
   const MOCK_EVENT_TAG = [{
     id: 'evento1',
     name: 'Evento 1',
@@ -45,7 +47,9 @@ export function DailyView({ config }) {
     border: '#F19072'
   }]
 
-  const printTime = (time, config) => {
+  console.log('Config:: ', config)
+
+  const printTime = (time) => {
     let result = new Date();
     result = result.setHours(time)
     result = new Date(result)
@@ -56,19 +60,21 @@ export function DailyView({ config }) {
 
 
   return (
-    <div className='DailyView'>
-      <div className='DailyView-item-hour'>
+    <div className='DailyWeek'>
+      <div className='DailyWeek-item-hour'>
       {
         [...Array(24)].map((e, i) =>
-          <div key={i} style={{ height:`${config.heightPerHour}px` }}>{ printTime((i+1), config) }</div>
+          <div key={i} style={{ height:`${config.heightPerHour}px` }}>{printTime(i+1)}</div>
         )
       }
       </div>
-      <div className='DailyView-item-event'>
       {
-        MOCK_EVENT_TAG.map(evento => <EventTag key={evento.id} info={ evento } view={'daily'} config={config} />)
+        MOCK_DAYS.map(day => <div key={day} className={`DailyWeek-item-event ${day}`}>
+            <p>{day}</p>
+            { MOCK_EVENT_TAG.map(evento => <EventTag key={evento.id} info={ evento } view={'week'} config={config} />) }
+          </div>
+        )
       }
-      </div>
     </div>
   );
 }

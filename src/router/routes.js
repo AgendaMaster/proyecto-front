@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Login } from './../pages/Login';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
-import { Calendar } from '../pages/Calendar'
+import { CalendarPage } from '../pages/Calendar'
 import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
 export const RenderRoutes = () => {
@@ -56,7 +56,7 @@ const ROUTES = [
     path: '/calendar',
     key: 'CALENDAR',
     exact: true,
-    component: Calendar,
+    component: CalendarPage,
     auth: true,
   },
   {

@@ -17,6 +17,7 @@
   padding: 10px;
   border-top-right-radius: 23px;
   border-bottom-right-radius: 23px;
+  border: 10px solid;
   background: beige;
   margin-bottom: 5px;
   position: absolute;
@@ -24,28 +25,6 @@
   width: -webkit-fill-available;
   border-color: transparent;
   cursor: pointer;
-
-  &.week {
-    border-radius: 23px;
-  }
-
-  &.daily:hover:after {
-    width: 100%;
-  }
-
-  &.daily:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 10px;
-    background: rgb(241, 144, 114);
-    transition: width .3s cubic-bezier(.35,.7,.32,.9);
-    z-index: -1;
-    border-top-right-radius: 23px;
-    border-bottom-right-radius: 23px;
-  }
 
   &.single-line {
     padding: 0 0 0 10px;
@@ -69,6 +48,12 @@
         display: none;
       }
     }
+  }
+  &:hover {
+    z-index: 199;
+    border-bottom-color: rgb(241, 144, 114);
+    border-top-color: rgb(241, 144, 114);
+    border-right-color: rgb(241, 144, 114);
   }
 
   &-info {

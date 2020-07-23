@@ -6,7 +6,7 @@ import './../../sass/components/layout/AppHeader.scss';
 export function AppHeader({ user = {} }) {
   return (
     <div className='AppHeader'>
-      <Link className='AppHeader-logo'>
+      <Link className='AppHeader-logo' to='www.google.com'>
         <figure>
           <img src={Logo} alt='App logo (colorful brain)' />
         </figure>
