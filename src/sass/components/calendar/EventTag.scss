@@ -30,10 +30,6 @@
     border-radius: 23px;
   }
 
-  &.daily:hover:after {
-    width: 100%;
-  }
-
   &.daily:after {
     content: '';
     position: absolute;
@@ -44,8 +40,6 @@
     background: rgb(241, 144, 114);
     transition: width .3s cubic-bezier(.35,.7,.32,.9);
     z-index: -1;
-    border-top-right-radius: 23px;
-    border-bottom-right-radius: 23px;
   }
 
   &.single-line {
