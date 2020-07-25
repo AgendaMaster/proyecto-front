@@ -24,6 +24,7 @@
   width: -webkit-fill-available;
   border-color: transparent;
   cursor: pointer;
+  color: darken($color: #f19072, $amount: 3%);
 
   &.week {
     border-radius: 23px;
@@ -58,6 +59,7 @@
 
       p {
         margin: 0 10px 0 0;
+        color: darken($color: #f19072, $amount: 50%);
       }
     }
     .EventTag-avatar {
@@ -74,8 +76,13 @@
   &-info {
     width: 70%;
     padding: 10px;
-    p {
+    p:first-child {
       margin: 0;
+      color: darken($color: #f19072, $amount: 3%);
+    }
+    p:last-child {
+      margin: 0;
+      color: lighten($color: #f19072, $amount: 3%);
     }
   }
 
@@ -97,6 +104,7 @@
 
     p {
       margin: 0;
+      color: darken($color: #f19072, $amount: 3%);
     }
   }
 }
