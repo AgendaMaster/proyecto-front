@@ -1,0 +1,24 @@
+@import '../../common/variables';
+@import '../../mixins/styledTitle';
+
+.Title {
+  &--level {
+    &-1 {
+      @include title(36px)
+    }
+    &-2 {
+      @include title(28px)
+    }
+    &-3 {
+      @include title(24px)
+    }
+  }
+  &--color {
+    &-primary {
+      color: $primary
+    }
+    &-secondary {
+      color: $secondary
+    }
+  }
+}

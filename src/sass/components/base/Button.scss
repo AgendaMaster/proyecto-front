@@ -1,0 +1,11 @@
+@import '../../common/variables';
+@import '../../mixins/button';
+
+.Button {
+  &--primary {
+    @include button-bg($primary);
+  }
+  &--secondary {
+    @include button-bg($secondary);
+  }
+}
