@@ -35,8 +35,8 @@ export class CalendarPage extends React.Component {
   }
 
   handleChange = (event) => {
-    console.log(event.target.value);
-    this.state.viewCalendar.map(view => event.target.value === view.id ? view.isActive = true : view.isActive = false );
+    const { viewCalendar } = this.state;
+    viewCalendar.map(view => view.isActive = event.target.value === view.id );
     this.setState({ actualView: event.target.value });
   }
 

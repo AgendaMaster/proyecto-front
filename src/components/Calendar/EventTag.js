@@ -2,7 +2,6 @@ import React from 'react'
 import '../../sass/components/calendar/EventTag.scss'
 
 export function EventTag ({ info, view, config }) {
-  // console.log(info)
 
   const getDate = (myDate) => {
     return `${myDate.getDate()} - ${myDate.toLocaleString('default', { month: 'long' })}`;
@@ -12,7 +11,6 @@ export function EventTag ({ info, view, config }) {
   const getEndTime = (myDate) => `${myDate.toLocaleString('default', { hourCycle: 'h12', hour: '2-digit', minute: '2-digit' })}`;
 
   const convertTimeToPixel = (startTime, hoursPixelValue) => {
-    // console.log({ hoursPixelValue })
     const compensation = Math.round(hoursPixelValue/2); // HALF HOUR COMPENSATION
     const minutesPixelValue = 15;
     const hours = startTime.getHours() - 1;

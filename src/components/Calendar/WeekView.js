@@ -47,8 +47,6 @@ export function WeekView({ config }) {
     border: '#F19072'
   }]
 
-  console.log('Config:: ', config)
-
   const printTime = (time) => {
     let result = new Date();
     result = result.setHours(time)
