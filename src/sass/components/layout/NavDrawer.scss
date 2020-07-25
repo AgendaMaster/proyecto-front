@@ -1,0 +1,14 @@
+@import './../../common/variables';
+
+.NavDrawer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  &-link {
+    color: $grey-medium;
+    &.active {
+      color: $primary;
+    }
+  }
+}

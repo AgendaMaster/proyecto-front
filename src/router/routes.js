@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
+
 import { Login } from './../pages/Login';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
@@ -48,6 +50,7 @@ const ROUTES = [
     path: '/dashboard',
     key: 'DASHBOARD',
     exact: true,
+    icon: faHome,
     component: Event,
     auth: true,
   },
