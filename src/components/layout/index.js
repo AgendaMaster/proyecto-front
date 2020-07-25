@@ -15,7 +15,7 @@ const suggestions = new Array(4).fill({
 export function Layout({ children }) {
   return (
     <div className='Layout'>
-      <AppHeader user={{}} />
+      <AppHeader />
       <NavDrawer routes={ROUTES[1].routes} />
       <main className='Layout-main'>{children}</main>
       <CalendarDrawer suggestions={suggestions} />

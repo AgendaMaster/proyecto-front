@@ -1,11 +1,15 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBell,
+  faSearch,
+  faAngleDown,
+} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Logo from './../../assets/images/logo.svg';
 import './../../sass/components/layout/AppHeader.scss';
 
-export function AppHeader({ user = {} }) {
+export function AppHeader({ user = { name: 'John Doe' } }) {
   return (
     <div className='AppHeader'>
       <Link className='AppHeader-logo' to='/'>
@@ -19,8 +23,15 @@ export function AppHeader({ user = {} }) {
       </div>
       <div className='AppHeader-userInfo'>
         <div className='Account'>
-          <img className='Account-profile' alt={user.name} />
-          <strong className='Acount-name'>{user.name}</strong>
+          <img
+            className='Account-profile'
+            alt={user.name}
+            src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTQEZrATmgHOi5ls0YCCQBTkocia_atSw0X-Q&usqp=CAU'
+          />
+          <strong className='Acount-name'>
+            {user.name}{' '}
+            <FontAwesomeIcon className='Account-icon' icon={faAngleDown} />
+          </strong>
         </div>
         <div className='Notifications'>
           <FontAwesomeIcon

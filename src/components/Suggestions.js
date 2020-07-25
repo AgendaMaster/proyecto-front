@@ -12,8 +12,8 @@ export function Suggestions({ suggestions = [] }) {
   return (
     <div className='Suggestions'>
       <h2 className='Suggestions-title'>Sugeridos</h2>
-      {suggestions.map((suggestion) => (
-        <SuggestionItem suggestion={suggestion} key={suggestion.id} />
+      {suggestions.map((suggestion, index) => (
+        <SuggestionItem suggestion={suggestion} key={index} />
       ))}
     </div>
   );
