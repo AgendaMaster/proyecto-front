@@ -1,11 +1,16 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ROUTES from './../../router/routes';
+import './../../sass/components/layout/NavDrawer.scss';
+
+const routes = ROUTES.filter((route) => route.icon);
 
 /**
  * Renderiza todas las rutas que se hayan agregado al arreglo de
  * routes.js
  */
-export function NavDrawer({ routes = [] }) {
+export function NavDrawer() {
   return (
     <aside className='NavDrawer'>
       <nav className='NavDrawer-nav'>
@@ -16,7 +21,11 @@ export function NavDrawer({ routes = [] }) {
             className='NavDrawer-link'
             activeClassName='active'
           >
-            <i className='NavDrawer-icon'>{route.icon}</i>
+            <FontAwesomeIcon
+              icon={route.icon}
+              size='lg'
+              className='NavDrawer-icon'
+            />
           </NavLink>
         ))}
       </nav>
