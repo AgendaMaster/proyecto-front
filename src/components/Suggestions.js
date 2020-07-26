@@ -1,5 +1,5 @@
 import React from 'react';
-import './../sass/components/Suggestions.scss';
+import '../sass/components/Suggestions.scss';
 
 const SuggestionItem = ({ suggestion = {} }) => (
   <div className='SuggestionItem'>
