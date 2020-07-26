@@ -5,6 +5,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons';
 import { Login } from './../pages/Login';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
+import { CalendarPage } from '../pages/Calendar'
 import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
 export const RenderRoutes = () => {
@@ -52,6 +53,13 @@ const ROUTES = [
     exact: true,
     icon: faHome,
     component: Event,
+    auth: true,
+  },
+  {
+    path: '/calendar',
+    key: 'CALENDAR',
+    exact: true,
+    component: CalendarPage,
     auth: true,
   },
   {

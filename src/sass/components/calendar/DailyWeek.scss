@@ -1,0 +1,95 @@
+@import '../../common/variables';
+
+.Calendar {
+  &-container {
+    .DailyWeek {
+      display: grid;
+      grid-template-columns: 100px 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      column-gap: 10px;
+
+      &-item {
+        width: 100%;
+        display: grid;
+        column-gap: 10px;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: 120px;
+
+        &-hour {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          color: #004C54;
+          // background-color: red;
+
+          div {
+            height: 120px;
+            align-items: center;
+            display: flex;
+          }
+        }
+
+        &-event {
+          //background-color: green;
+          position: relative;
+          background-image: 
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54),
+          linear-gradient(#004C54,#004C54);
+          background-size:100% 1px ;
+          background-repeat:no-repeat;
+          background-position:
+            0 60px,
+            0 180px,
+            0 300px,
+            0 420px,
+            0 540px,
+            0 660px,
+            0 780px,
+            0 900px,
+            0 1020px,
+            0 1140px,
+            0 1260px,
+            0 1380px,
+            0 1500px,
+            0 1620px,
+            0 1740px,
+            0 1860px,
+            0 1980px,
+            0 2100px,
+            0 2220px,
+            0 2340px,
+            0 2460px,
+            0 2580px,
+            0 2700px,
+            0 2820px;
+
+          div {
+            min-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
