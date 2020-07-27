@@ -70,7 +70,7 @@ export class CalendarMini extends React.Component {
     for (let iterMonthDays = 0; iterMonthDays < firstDayWeekDay; iterMonthDays++) {
       const today = new Date(currentYear, currentMonth - 1, oldMonthDays - iterMonthDays)
       const isToday = (todayDay === iterMonthDays && todayMonth === (currentMonth - 1)) ? true : false
-      const isActive = (activeDay === iterMonthDays && activeMonth === (currentMonth - 1) && activeYear === currentYear) ? true : false
+      const isActive = (activeDay === iterMonthDays && activeMonth === (currentMonth - 1) && activeYear === currentYear)
       const res = {
         dayWeek: today.getDay(),
         dayNumber: oldMonthDays - iterMonthDays,
@@ -85,7 +85,7 @@ export class CalendarMini extends React.Component {
     for (let iterMonthDays = 1; iterMonthDays <= myDate.getDate(); iterMonthDays++) {
       const today = new Date(currentYear, currentMonth, iterMonthDays)
       const isToday = (todayDay === iterMonthDays && todayMonth === (currentMonth)) ? true : false
-      const isActive = (activeDay === iterMonthDays && activeMonth === currentMonth && activeYear === currentYear) ? true : false
+      const isActive = (activeDay === iterMonthDays && activeMonth === currentMonth && activeYear === currentYear)
       const res = {
         dayWeek: today.getDay(),
         dayNumber: iterMonthDays,
@@ -100,7 +100,7 @@ export class CalendarMini extends React.Component {
     for (let iterMonthDays = 1; iterMonthDays < (7 - lastDay.getDay()); iterMonthDays++) {
       const today = new Date(currentYear, currentMonth + 1, iterMonthDays)
       const isToday = (todayDay === iterMonthDays && todayMonth === (currentMonth + 1)) ? true : false
-      const isActive = (activeDay === iterMonthDays && activeMonth === (currentMonth + 1) && activeYear === currentYear) ? true : false
+      const isActive = (activeDay === iterMonthDays && activeMonth === (currentMonth + 1) && activeYear === currentYear)
       const res = {
         dayWeek: today.getDay(),
         dayNumber: iterMonthDays,
@@ -112,15 +112,16 @@ export class CalendarMini extends React.Component {
       resultArray.push(res)
     }
 
+    const isTodayString = `today ${todayClass}`
+    const isActiveString = `active ${activeDayClass}`
+
     return resultArray.map((day, i) => (<div
         data-day={day.dayNumber}
         key={`CalendaMini-day-set-${i}`}
         onClick={this.handleClickSetCurrentDate}
         className={`CalendarMini-body__days ${day.extraDays ? extraDaysClass : daysClass} 
-                    ${day.isToday ? 'today' : '' } 
-                    ${day.isToday ? todayClass : '' }
-                    ${day.isActive ? activeDayClass : '' }
-                    ${day.isActive ? 'active' : '' }
+                    ${day.isToday && isTodayString } 
+                    ${day.isActive && isActiveString }
                     `
                   }
         >{
