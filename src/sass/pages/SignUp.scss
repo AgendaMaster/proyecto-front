@@ -1,0 +1,21 @@
+@import '../common/variables';
+
+.SignUp {
+  max-width: 900px;
+  margin: auto;
+  height: 100%;
+  &__form {
+    padding: 20px;
+    margin-top: 20%;
+  }
+  &__section {
+      margin-bottom: 5em;
+  }
+  &__footer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
