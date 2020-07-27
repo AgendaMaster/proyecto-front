@@ -8,8 +8,11 @@ const COLOR = 'primary';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
+    confirmPassword: '',
   });
 
   const handleChangeInput = (e) => {
