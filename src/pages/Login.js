@@ -6,13 +6,13 @@ import Button from '../components/base/Button';
 
 const COLOR = 'primary';
 
-export function Login() {
+const Login = () => {
   // TODO: Integrate this with backend.
   const handleSubmit = () => console.log('Submitting...');
 
   return (
     <div className='Login'>
-      <StyledTitle text='Sing Up' level={1} color={COLOR} />
+      <StyledTitle text='Sign In' level={1} color={COLOR} />
       <div className='Login__form'>
         <FormGroup label='E-mail' color={COLOR}>
           <input type='text' />
@@ -26,4 +26,6 @@ export function Login() {
       </div>
     </div>
   );
-}
+};
+
+export default Login;

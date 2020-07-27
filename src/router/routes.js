@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { faHome } from '@fortawesome/free-solid-svg-icons';
 
-import { Login } from './../pages/Login';
+import Login from './../pages/Login';
+import SignUp from '../pages/SignUp';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
 import { CalendarPage } from '../pages/Calendar'
@@ -44,6 +45,14 @@ const ROUTES = [
     key: 'LOGIN',
     exact: true,
     component: Login,
+    auth: false,
+    redirect: false,
+  },
+  {
+    path: '/sign-up',
+    key: 'SIGNUP',
+    exact: true,
+    component: SignUp,
     auth: false,
     redirect: false,
   },
