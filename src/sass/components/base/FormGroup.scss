@@ -17,17 +17,30 @@
   input {
     @include input($primary); //default
   }
+  textarea {
+    @include input($primary); //default
+  }
   &--color {
     &-primary {
       color: $primary;
       input {
         @include input($primary);
       }
+      textarea {
+        @include input($primary);
+        text-align: start;
+        height: 4em;
+      }
     }
     &-secondary {
       color: $secondary;
       input {
         @include input($secondary);
+      }
+      textarea {
+        @include input($secondary);
+        text-align: start;
+        height: 4em;
       }
     }
   }
