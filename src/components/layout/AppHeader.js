@@ -11,6 +11,7 @@ import './../../sass/components/layout/AppHeader.scss';
 
 export function AppHeader({ user = { name: 'John Doe' } }) {
   return (
+    <>
     <div className='AppHeader'>
       <Link className='AppHeader-logo' to='/'>
         <figure>
@@ -42,5 +43,6 @@ export function AppHeader({ user = { name: 'John Doe' } }) {
         </div>
       </div>
     </div>
+    </>
   );
 }
