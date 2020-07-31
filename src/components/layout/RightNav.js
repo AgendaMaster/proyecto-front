@@ -4,7 +4,6 @@ import './../../sass/components/layout/RightNav.scss';
 const RightNav = ({ open }) => {
   let openBtn = open ? "RightNav" : "RightNav-open";
   return (
-    <>
       <ul className={openBtn}>
         <li>Inicio</li>
         <li>Eventos</li>
@@ -15,7 +14,6 @@ const RightNav = ({ open }) => {
           <input placeholder='Search' className='SearchBar-input' type='text' />
         </li>
       </ul>
-    </>
   )
 }
 
