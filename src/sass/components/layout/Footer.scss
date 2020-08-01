@@ -3,11 +3,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 84px;
   color: $white;
   border-top: 4px solid $primary-ligth;
   background-color: $primary;
   font-size: 12px;
+  padding: 0 84px;
   &-infoLink,
   .SocialMediaLink {
     margin-right: 15px;
