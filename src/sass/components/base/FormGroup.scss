@@ -9,6 +9,8 @@
   margin-bottom: 30px;
   align-items: center;
   color: $primary; //default
+  flex-wrap: nowrap;
+
   span {
     font-family: $titles;
     font-weight: bold;
@@ -36,5 +38,14 @@
   }
   &__input {
     width: 60%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .FormGroup {
+    flex-wrap: wrap;
+    &__input {
+      width: 100%;
+    }
   }
 }

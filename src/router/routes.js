@@ -23,6 +23,8 @@ export const RenderRoutes = () => {
           />
         );
       })}
+      <Route component={CalendarPage} exact path='/CalendarPage'/>
+      <Route component={Login} exact path='/login'/>
       <Route component={() => <h1>Not Found!</h1>} />
     </Switch>
   );
