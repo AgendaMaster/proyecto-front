@@ -12,4 +12,8 @@ const Button = ({ onClick, text, color, ...props }) => (
   </button>
 );
 
+Button.defaultProps = {
+  color: 'primary'
+}
+
 export default Button;
