@@ -1,0 +1,322 @@
+.home{
+    background-image: url(../../assets/images/home.svg);
+    width: auto;
+    height: 554px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+}
+.titleLanding{
+    display: flex;
+    padding-top: 40px;
+    padding-left: 50px;
+    position: absolute;
+}
+.iconHome{
+    width: 50px;
+}
+.udiary{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: 1em;
+    color: #8563D5;
+    margin-left: 10px;
+}
+.ingreso{
+    float: right;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    padding-top: 50px;
+    padding-right: 50px;
+}
+.workHome,
+.equipoHome,
+.contactoHome,
+.sesionHome{
+    margin-right: 10px;
+}
+.titleHome2{
+    position: absolute;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 100px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.worktitle{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 94px;
+    text-align: center;
+    color: #31A9AB;
+}
+.worktitle2{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 30px;
+    text-align: center;
+    color: #676767;
+    margin-bottom: 10px;
+}
+.work{
+    height: 300px;
+    text-align: center;
+}
+.work2{
+    height: 500px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+}
+.conceptualIcon{
+    grid-column-start:2;
+    grid-row-start:1;
+    color: #004C54;
+}
+.conceptualtitle,
+.conceptualText{
+    grid-column-start:2;
+    grid-row-start:2;
+}
+.conceptualtitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #004C54;
+    margin-top: -25px;
+    margin-right: 50px
+}
+.conceptualText{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: right;
+    color: #676767;
+    margin-right: 50px
+}
+
+.developIcon{
+    grid-column-start:2;
+    grid-row-start:3;
+    color: #004C54;
+}
+.developtitle,
+.developText{
+    grid-column-start:2;
+    grid-row-start:4;
+}
+.developtitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #004C54;
+    margin-top: -25px;
+    margin-right: 50px
+}
+.developText{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: right;
+    color: #676767;
+    margin-right: 50px
+}
+
+.guiaIcon{
+    grid-column-start:3;
+    grid-row-start:1;
+    color: #004C54;
+}
+.guiatitle,
+.guiaText{
+    grid-column-start:3;
+    grid-row-start:2;
+}
+.guiatitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #004C54;
+    margin-top: -25px;
+    margin-right: 50px
+}
+.guiaText{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: right;
+    color: #676767;
+    margin-right: 50px
+}
+
+.diseñoIcon{
+    grid-column-start:3;
+    grid-row-start:3;
+    color: #004C54;
+}
+.diseñotitle,
+.diseñoText{
+    grid-column-start:3;
+    grid-row-start:4;
+}
+.diseñotitle{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: right;
+    color: #004C54;
+    margin-top: -25px;
+    margin-right: 50px
+}
+.diseñoText{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: right;
+    color: #676767;
+    margin-right: 50px
+}
+.clienteImg{
+    text-align: center;
+}
+.cliente1{
+    width: 407px;
+    height: 141.65px;
+}
+.cliente2{
+    width: 407px;
+    height: 141.65px;
+}
+.soluciones{
+    background-image: url(../../assets/images/soluciones.svg);
+    display: block;
+    width: auto;
+    height: 612px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center;
+}
+.soluciontitle{
+    position: absolute;
+    font-family: PT Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.saberMasSolucion{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.equipo{
+    background: #9B51E0;
+    height: 500px;
+    
+}
+.equipo2{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.equipoImg{
+    background: #FFED91;
+    border-radius: 16px;
+    width: 220px;
+    height: 313px;
+}
+.contacto{
+    text-align: center;
+    background: #F2F2F2;
+    height: 300px;
+}
+.contacto2{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: center;
+    letter-spacing: 1em;
+    color: #004C54;
+    margin-bottom: 10px;
+}
+.contacto3{
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    color: #A09D9D;
+    margin-bottom: 10px;
+}
+.nombre,
+.correo,
+.ayuda{
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    border-bottom: 2px solid gray;
+}
+.datos{
+    margin-top: 50px;
+}
+.ayuda{
+    margin-top: 50px;
+    width: 512px;;
+}
+.nombre{
+    margin-right: 20px;
+}
