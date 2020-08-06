@@ -11,6 +11,13 @@
   &-main {
     grid-area: main;
   }
+  &.basic {
+    grid-template:
+      'header   header header   ' $header-size
+      'main      main   main ' 1fr
+      'footer   footer footer   ' 95px /
+      80px 1fr 300px;
+  }
 }
 
 .AppHeader {
