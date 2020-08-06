@@ -14,6 +14,10 @@ $grey-medium: #d3d3d3;
 $grey-dark: #676767;
 $white: #ffffff;
 
+$green-dark: #004C54;
+
+$purple-1: #9B51E0;
+
 $main-gradient: linear-gradient(180deg, $secondary 0%, $primary 100%);
 $grey-gradient: linear-gradient(
   269.59deg,
@@ -30,3 +34,9 @@ $paragraphs-primary: Poppins;
 $paragraphs-secondary: Roboto;
 
 $common-spacing: 5px;
+
+// LANDING PAGE
+$landing-title: #8563D5;
+$landing-bg-section-2: #5DF4C9;
+
+$breakpoint-tablet: 768px;

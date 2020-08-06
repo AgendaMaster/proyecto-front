@@ -20,5 +20,28 @@
     &-secondary {
       color: $secondary
     }
+    &-landing {
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Title {
+    &--level {
+      &-1 {
+        @include title(36px)
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .Title {
+    &--level {
+      &-1 {
+        @include title(1.8em)
+      }
+    }
   }
 }

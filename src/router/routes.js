@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faUser, faReceipt } from '@fortawesome/free-solid-svg-icons';
 
 import Login from './../pages/Login';
 import SignUp from '../pages/SignUp';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
-import { CalendarPage } from '../pages/Calendar'
+import { CalendarPage } from '../pages/Calendar';
 import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
 export const RenderRoutes = () => {
@@ -24,7 +24,8 @@ export const RenderRoutes = () => {
           />
         );
       })}
-
+      <Route component={CalendarPage} exact path='/CalendarPage'/>
+      <Route component={Login} exact path='/login'/>
       <Route component={() => <h1>Not Found!</h1>} />
     </Switch>
   );
@@ -46,7 +47,7 @@ const ROUTES = [
     exact: true,
     component: Login,
     auth: false,
-    redirect: false,
+    redirect: true,
   },
   {
     path: '/sign-up',
@@ -54,13 +55,29 @@ const ROUTES = [
     exact: true,
     component: SignUp,
     auth: false,
-    redirect: false,
+    redirect: true,
   },
   {
     path: '/dashboard',
     key: 'DASHBOARD',
     exact: true,
     icon: faHome,
+    component: Event,
+    auth: true,
+  },
+  {
+    path: '/user',
+    key: 'USER',
+    exact: true,
+    icon: faUser,
+    component: Event,
+    auth: true,
+  },
+  {
+    path: '/ticket',
+    key: 'TICKET',
+    exact: true,
+    icon: faReceipt,
     component: Event,
     auth: true,
   },

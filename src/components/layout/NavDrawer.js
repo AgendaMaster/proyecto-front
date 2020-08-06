@@ -23,7 +23,7 @@ export function NavDrawer() {
           >
             <FontAwesomeIcon
               icon={route.icon}
-              size='lg'
+              size='2x'
               className='NavDrawer-icon'
             />
           </NavLink>

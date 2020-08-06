@@ -1,10 +1,12 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { AppHeader } from './AppHeader';
 import { NavDrawer } from './NavDrawer';
 import { CalendarDrawer } from './CalendarDrawer';
 import { Footer } from './Footer';
 import ROUTES from './../../router/routes';
+import Burger from './Burger'
 import './../../sass/components/layout/index.scss';
 
 const suggestions = new Array(4).fill({
@@ -13,12 +15,17 @@ const suggestions = new Array(4).fill({
 });
 
 export function Layout({ children }) {
+  const { pathname } = useLocation();
+  const { auth: authRoute } =
+    ROUTES.find((route) => route.path === pathname) || {};
   return (
-    <div className='Layout'>
+    <div className={`Layout ${authRoute ? '' : 'basic'}`}>
+      <Burger />
       <AppHeader />
-      <NavDrawer routes={ROUTES[1].routes} />
+      <AppHeader auth={authRoute} />
+      {authRoute && <NavDrawer routes={ROUTES[1].routes} />}
       <main className='Layout-main'>{children}</main>
-      <CalendarDrawer suggestions={suggestions} />
+      {authRoute && <CalendarDrawer suggestions={suggestions} />}
       <Footer />
     </div>
   );
