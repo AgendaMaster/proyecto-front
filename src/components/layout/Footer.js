@@ -29,9 +29,9 @@ const socialMediaLinks = [
   },
 ];
 
-export function Footer() {
+export function Footer({ style }) {
   return (
-    <footer className='Footer'>
+    <footer className='Footer' style={style}>
       <div className='Footer-infoLinks'>
         <Link className='Footer-infoLink' to='Contact'>
           Contacto

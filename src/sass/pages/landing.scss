@@ -1,11 +1,14 @@
 @import '../common/variables';
 @import '../common/utils';
 
-.landing {
+a {
+  color: white;
+}
 
+.landing {
   &-container {
     max-width: 1024px;
-    margin:0 auto;
+    margin: 0 auto;
   }
 
   &-header {
@@ -40,7 +43,7 @@
 
     &-menu {
       color: $grey;
-      
+
       display: flex;
       justify-content: flex-end;
       align-items: center;
@@ -67,10 +70,11 @@
         }
       }
 
-      &-register {
+      &-register a {
         color: $grey;
         border-radius: 25px;
-        background-color: $purple-1;
+        background-color: $secondary;
+        padding: 5px 15px;
       }
     }
   }
@@ -81,8 +85,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-
-      background-image: linear-gradient(180deg, rgba(37, 37, 37, 0.8) 10%, rgba(196, 196, 196, 0) 55%), url('../../assets/images/stock-photo.jpg');
+      text-align: center;
+      background-image: linear-gradient(
+          180deg,
+          rgba(37, 37, 37, 0.9) 10%,
+          rgba(196, 196, 196, 0) 55%
+        ),
+        url('../../assets/images/stock-photo.jpg');
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -130,9 +139,9 @@
         height: 90px;
       }
 
-      >div {
+      > div {
         display: grid;
-        grid-template-columns: repeat(2,300px);
+        grid-template-columns: repeat(2, 300px);
         grid-template-rows: repeat(5, 200px);
         margin: 0 auto;
         justify-content: center;
@@ -153,7 +162,7 @@
           font-size: 18px;
           line-height: 21px;
           text-align: center;
-          color: #004C54;
+          color: #004c54;
           margin-bottom: 30px;
           width: 100%;
         }
@@ -180,7 +189,7 @@
       }
       .section-area-02 {
         grid-row-start: span 3;
-        margin-top: 100px;  
+        margin-top: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -211,13 +220,13 @@
         grid-gap: 20px;
 
         .team-person {
-          background-color: #F5F5F5;
+          background-color: #f5f5f5;
           border-radius: 0 0 8px 8px;
-          border-color: #EDAB00;
+          border-color: #edab00;
           border-bottom-width: 5px;
           margin-bottom: 30px;
           padding: 15px;
-          cursor:pointer;
+          cursor: pointer;
 
           &:hover {
             background-color: $green-dark;
@@ -229,13 +238,13 @@
           }
 
           h2 {
-              font-size: 1.2em;
+            font-size: 1.2em;
           }
 
           img {
             max-width: 80%;
             margin-top: -40px;
-            border: 5px solid #FFF;
+            border: 5px solid #fff;
             border-radius: 5px;
           }
         }
@@ -269,11 +278,11 @@
           height: 40px;
 
           /* GRIS MEDIO */
-          color: #A09D9D;
+          color: #a09d9d;
 
           background-color: transparent;
           border: none;
-          border-bottom: 1px solid #BDBDBD;
+          border-bottom: 1px solid #bdbdbd;
 
           &:focus {
             outline: none;
@@ -304,7 +313,7 @@
 
         text-align: center;
 
-        color: $grey-medium;
+        color: $grey-dark;
       }
     }
   }
@@ -312,11 +321,10 @@
 
 @media (max-width: $breakpoint-tablet) {
   .landing {
-
     &-container {
       width: 70%;
     }
-  
+
     &-header {
       display: flex;
       margin: 0;
@@ -327,21 +335,21 @@
       img {
         width: 30px;
       }
-  
+
       &-logo {
         justify-content: flex-start;
         font-size: 25px;
         line-height: 49px;
         letter-spacing: 0.5em;
-  
+
         img {
           margin-right: 30px;
         }
       }
-  
+
       &-menu {
         color: $grey;
-        
+
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -349,14 +357,14 @@
         .hamburguer-button {
           display: block;
           border-radius: 5px;
-          border: 1px solid #FFF;
+          border: 1px solid #fff;
           padding: 5px;
 
           &:hover {
             background-color: #000;
           }
         }
-  
+
         ul {
           position: absolute;
           display: inline-grid;
@@ -372,7 +380,7 @@
             padding: 10px 0px;
           }
         }
-  
+
         &-register {
           color: $grey;
           border-radius: 25px;
@@ -380,7 +388,7 @@
         }
       }
     }
-  
+
     &-section {
       &-hero {
         p {
@@ -398,8 +406,8 @@
       }
       &-2 {
         padding: 50px 0;
-  
-        >div {
+
+        > div {
           grid-template-columns: 1fr;
           grid-template-rows: auto;
           grid-row-gap: 30px;
@@ -408,13 +416,13 @@
       &-3 {
         padding: 50px 0;
         background-color: $purple-1;
-  
+
         .team-container {
           display: grid;
           grid-template-columns: 1fr;
           grid-template-rows: auto;
           grid-gap: 20px;
-  
+
           .team-person {
             margin-bottom: 30px;
             padding: 15px;
@@ -429,12 +437,12 @@
           line-height: 40px;
           letter-spacing: 0.5em;
         }
-  
+
         .form-container {
           grid-template-rows: 100px 50px;
           grid-gap: 20px;
           width: auto;
-  
+
           > div {
             grid-template-columns: 1fr;
             grid-gap: 20px;

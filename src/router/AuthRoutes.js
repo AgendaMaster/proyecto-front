@@ -7,7 +7,7 @@ const AuthComponent = ({ component: Component, path, exact, authorized }) => {
     return <Route component={Component} path={path} exact={exact} />;
   }
 
-  return <Redirect to='/login' />;
+  return <Redirect to='/' />;
 };
 
 const NoAuthComponent = ({
@@ -17,7 +17,6 @@ const NoAuthComponent = ({
   redirect,
   authorized,
 }) => {
-  console.log(authorized, redirect);
   if (authorized && redirect) {
     return <Redirect to='/dashboard' />;
   }

@@ -39,7 +39,7 @@ const ROUTES = [
     exact: true,
     component: Landing,
     auth: false,
-    redirect: false,
+    redirect: true,
   },
   {
     path: '/login',

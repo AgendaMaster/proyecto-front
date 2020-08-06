@@ -1,63 +1,22 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { StyledImage, StyledTitle } from '../components/base';
+import Button from '../components/base/Button';
+import { Footer } from '../components/layout/Footer';
 
 import Logo from '../assets/images/logo.svg';
 import PlantBook from '../assets/images/plant-book.svg';
 import Compass from '../assets/images/compass.svg';
 import DrawTools from '../assets/images/draw-tools.svg';
 import Computer from '../assets/images/computer.svg';
+
+import { TEAM_INFO } from '../constants/team';
+
 import '../sass/pages/landing.scss'
 
-import Button from '../components/base/Button';
-
-const COLOR = 'purple-1';
-
+const COLOR = '#31a9ab';
 
 export function Landing() {
-
-
-  const TEAM_INFO = [
-    {
-      name: 'Raziel Carvajal',
-      team: 'Frontend',
-      avatar: 'https://avatars3.githubusercontent.com/u/181764?s=460&u=a0a2ce2498fc3316e00a27a8ac14bbcb17dd1c30&v=4'
-    },
-    {
-      name: 'Nicolás Arias',
-      team: 'Frontend',
-      avatar: 'https://avatars1.githubusercontent.com/u/24924906?s=400&u=d29ade84aae0c65741822d04b51bf8dfa7de5617&v=4'
-    },
-    {
-      name: 'Mariangélica Useche',
-      team: 'Frontend',
-      avatar: 'https://avatars0.githubusercontent.com/u/22798836?s=400&u=bb96efb4f1e915eaaf4537271400a4f13b25574b&v=4'
-    },
-    {
-      name: 'Daniel Valderrama',
-      team: 'Frontend',
-      avatar: 'https://avatars1.githubusercontent.com/u/58479621?s=400&u=417387b5049b4c1bb2551f16575ed42c50427e01&v=4'
-    },
-    {
-      name: 'Santiago Andres Duque Moreno',
-      team: 'Backend',
-      avatar: 'https://avatars0.githubusercontent.com/u/41799763?s=400&u=bb3e2c2bfa6e8602ec8d0efb33a667754c6eaceb&v=4'
-    },
-    {
-      name: 'Heyner Javier Marmol',
-      team: 'Backend',
-      avatar: 'https://avatars2.githubusercontent.com/u/3501269?s=400&u=86b37904a878af1b68af0286491690fae52e5841&v=4'
-    },
-    {
-      name: 'Gabriel Zarate',
-      team: 'Backend',
-      avatar: 'https://avatars2.githubusercontent.com/u/54913346?s=400&u=8b3d3da04f53f5b17eebd20838e6b4cbbc4e53e0&v=4'
-    },
-    {
-      name: 'Andrés Felipe Carrion',
-      team: 'Backend',
-      avatar: 'https://avatars3.githubusercontent.com/u/42750251?s=400&u=4b6ee47a1798be48a916b6cd2e1786b148b8cd52&v=4'
-    },
-  ]
 
   return (
     <div className="landing">
@@ -71,28 +30,27 @@ export function Landing() {
               Menu
             </div>
             <ul>
-              <li>Work</li>
-              <li>Planes</li>
-              <li>Equipo</li>
-              <li>Contactanos</li>
-              <li>Iniciar Sesion</li>
-              <li class="landing-header-menu-register">Registrarme</li>
+              <li><a href='#about'>Sobre Nosotros</a></li>
+              <li><a href='#team'>Equipo</a></li>
+              <li><a href='#contact'>Contáctanos</a></li>
+              <li><NavLink to="/login">Iniciar Sesión</NavLink></li>
+              <li class="landing-header-menu-register"><NavLink to="/sign-up">Registrarme</NavLink></li>
             </ul>
           </nav>
         </div>
       </div>
       <section className="landing-section-hero">
-        <p>ORDENA TU TIEMPO</p>
+        <p>Reserva tu cupo en los mejores eventos</p>
       </section>
       <section className="landing-section-1">
         <div className="landing-container text-center">
-          <h2>Unimos nodos productivos bajo un mismo fin.</h2>
-          <p>Construir soluciones para empresas de todos los sectores.</p>
-          <Button text='SendQUIERO SABER MAS +' color={COLOR} />
+          <h2>Ahorra tiempo y llamadas</h2>
+          <p>Reserva online y maneja tu calendario de eventos</p>
+          <a href="#contact"><Button text='QUIERO SABER MAS +' color='secondary' /></a>
         </div>
       </section>
 
-      <section className="landing-section-2">
+      <section className="landing-section-2" id="about">
         <div className="landing-container text-center">
           <div className="section-area-01">
             <StyledImage
@@ -102,13 +60,13 @@ export function Landing() {
               fontSize='8em'
               opacity={0.1}
               fontWeight={700}
-              color='#31a9ab'
+              color={COLOR}
             >
               <img src={PlantBook} alt='App logo (colorful brain)' />
             </StyledImage>
-            <h2>Conceptualizamos</h2>
+            <h2>Explora</h2>
             <p className="text-align-right">
-              Creemos que la columna vertebral de un proyecto debe estar basado en un concepto coherente con la identidad de la marca.
+              Revisa los eventos sugeridos de acuerdo a tus gustos.
             </p>
           </div>
           <div className="section-area-02">
@@ -119,13 +77,13 @@ export function Landing() {
               fontSize='8em'
               opacity={0.1}
               fontWeight={700}
-              color='#31a9ab'
+              color={COLOR}
             >
               <img src={Compass} alt='App logo (colorful brain)' />
             </StyledImage>
-            <h2>Guiamos</h2>
+            <h2>Conoce</h2>
             <p className="text-align-left">
-              Acompañamos el proceso de toma de decisiones de nuestros clientes, somos su aliado estratégico a la hora de generar resultados.
+              Lee la información del evento: ¿Quién lo organiza? ¿En qué horarios? ¿Qué ofrece?
             </p>
           </div>
           <div className="section-area-03">
@@ -136,13 +94,13 @@ export function Landing() {
               fontSize='8em'
               opacity={0.1}
               fontWeight={700}
-              color='#31a9ab'
+              color={COLOR}
             >
               <img src={Computer} alt='App logo (colorful brain)' />
             </StyledImage>
-            <h2>Desarrollamos</h2>
+            <h2>Reserva</h2>
             <p className="text-align-right">
-              Nuestro equipo multidisciplinario resuelve productivamente las solicitudes de los clientes para entregar un resultado satisfactorio.
+            Inscríbete al evento y reserva tu cupo. El evento lo podrás visualizar en tu calendario personalizado.
             </p>
           </div>
           <div className="section-area-04">
@@ -153,18 +111,18 @@ export function Landing() {
               fontSize='8em'
               opacity={0.1}
               fontWeight={700}
-              color='#31a9ab'
+              color={COLOR}
             >
               <img src={DrawTools} alt='App logo (colorful brain)' />
             </StyledImage>
-            <h2>Diseñamos</h2>
+            <h2>Asiste</h2>
             <p className="text-align-left">
-              Somos expertos en convertir el ADN de la marca en una identidad gráfica, un lenguaje que comunique los valores.
+              Revisa tu correo y obtén tus pase personalizado al evento. ¡Disfruta tu momento!
             </p>
           </div>
         </div>
       </section>
-      <section className="landing-section-3">
+      <section className="landing-section-3" id="team">
         <div className="landing-container text-center">
           <StyledTitle text="Equipo" level={2} color="landing" />
 
@@ -181,9 +139,9 @@ export function Landing() {
           </div>
         </div>
       </section>
-      <section className="landing-section-4">
+      <section className="landing-section-4" id="contact">
         <div className="landing-container text-center">
-          <h3>ponte en contacto</h3>
+          <h3>Ponte en contacto</h3>
           <p>¡Es tan sencillo como saber que le escribes a un amigo, un aliado!</p>
           <div className="form-container">
             <div>
@@ -191,9 +149,11 @@ export function Landing() {
               <input placeholder="Correo" />
             </div>
             <input placeholder="¿En que podemos ayudarte?" />
+            <Button text="Enviar" style={{marginTop: 25}} />
           </div>
         </div>
       </section>
+      <Footer style={{ padding: 40 }} />
     </div>
   )
 }
