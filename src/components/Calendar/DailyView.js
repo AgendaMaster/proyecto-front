@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom';
 import { EventTag } from './EventTag'
 import '../../sass/components/calendar/DailyView.scss'
 
@@ -66,7 +67,9 @@ export function DailyView({ config }) {
       </div>
       <div className='DailyView-item-event'>
       {
-        MOCK_EVENT_TAG.map(evento => <EventTag key={evento.id} info={ evento } view={'daily'} config={config} />)
+        MOCK_EVENT_TAG.map(evento => <Link to="/event/1">
+          <EventTag key={evento.id} info={ evento } view={'daily'} config={config} />
+        </Link>)
       }
       </div>
     </div>

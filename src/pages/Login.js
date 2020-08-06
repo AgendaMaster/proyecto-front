@@ -63,12 +63,12 @@ const Login = ({ setSuggestions, setToken, setUser }) => {
         </Link>
       </div>
       <form className='Login' onSubmit={handleSubmit}>
-        <StyledTitle text='Sign In' level={1} color={COLOR} />
+        <StyledTitle text='Entrar' level={1} color={COLOR} />
         <Link to='/sign-up' className='BackLink'>
           Quiero crear una cuenta
         </Link>
         <div className='Login__form'>
-          <FormGroup label='E-mail' color={COLOR}>
+          <FormGroup label='Correo' color={COLOR}>
             <input
               required
               type='text'
@@ -77,7 +77,7 @@ const Login = ({ setSuggestions, setToken, setUser }) => {
               data-name='email'
             />
           </FormGroup>
-          <FormGroup label='Password' color={COLOR}>
+          <FormGroup label='Contraseña' color={COLOR}>
             <input
               required
               type='password'
@@ -88,7 +88,7 @@ const Login = ({ setSuggestions, setToken, setUser }) => {
           </FormGroup>
         </div>
         <div className='Login__footer'>
-          <Button text='Send' type='submit' color={COLOR} />
+          <Button text='Enviar' type='submit' color={COLOR} />
         </div>
       </form>
       <Footer />

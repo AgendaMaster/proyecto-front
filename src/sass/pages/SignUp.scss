@@ -2,7 +2,9 @@
 
 .SignUp {
   max-width: 900px;
+  min-width: 900px;
   margin: 0 20%;
+  margin: auto;
   height: 100%;
   &__form {
     padding: 20px;

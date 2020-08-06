@@ -63,7 +63,7 @@ const SignUp = () => {
       </Link>
     </div>
     <form className='SignUp' onSubmit={handleSubmit}>
-      <StyledTitle text='Sign Up' level={1} color={COLOR} />
+      <StyledTitle text='Registro' level={1} color={COLOR} />
       <Link to='/login' className="BackLink">
         Ya tengo cuenta
       </Link>
