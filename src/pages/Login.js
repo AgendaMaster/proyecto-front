@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // REDUX
 import { bindActionCreators } from 'redux';
@@ -53,6 +54,9 @@ const Login = ({ setSuggestions, setToken, setUser }) => {
   return (
     <form className='Login' onSubmit={handleSubmit}>
       <StyledTitle text='Sign In' level={1} color={COLOR} />
+      <Link to='/sign-up' className="BackLink">
+        Quiero crear una cuenta
+      </Link>
       <div className='Login__form'>
         <FormGroup label='E-mail' color={COLOR}>
           <input

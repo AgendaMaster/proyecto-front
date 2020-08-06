@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyledTitle, FormGroup } from '../components/base';
 
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import { signUp } from '../api/';
 import '../sass/pages/SignUp.scss';
@@ -53,9 +53,12 @@ const SignUp = () => {
   return (
     <form className='SignUp' onSubmit={handleSubmit}>
       <StyledTitle text='Sign Up' level={1} color={COLOR} />
+      <Link to='/login' className="BackLink">
+        Ya tengo cuenta
+      </Link>
       <div className='SignUp__form'>
         <div className='SignUp__section'>
-          <FormGroup label='First Name' color={COLOR}>
+          <FormGroup label='Nombre' color={COLOR}>
             <input
               required
               type='text'
@@ -64,7 +67,7 @@ const SignUp = () => {
               data-name='firstName'
             />
           </FormGroup>
-          <FormGroup label='Last Name' color={COLOR}>
+          <FormGroup label='Apellido' color={COLOR}>
             <input
               required
               type='text'
@@ -75,7 +78,7 @@ const SignUp = () => {
           </FormGroup>
         </div>
         <div className='SignUp__section'>
-          <FormGroup label='E-mail Address' color={COLOR}>
+          <FormGroup label='Correo' color={COLOR}>
             <input
               required
               type='text'
@@ -84,7 +87,7 @@ const SignUp = () => {
               data-name='email'
             />
           </FormGroup>
-          <FormGroup label='Password' color={COLOR}>
+          <FormGroup label='Contraseña' color={COLOR}>
             <input
               required
               type='password'
@@ -93,7 +96,7 @@ const SignUp = () => {
               data-name='password'
             />
           </FormGroup>
-          <FormGroup label='Confirm Password' color={COLOR}>
+          <FormGroup label='Confirma la contraseña' color={COLOR}>
             <input
               required
               type='password'
@@ -105,7 +108,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className='SignUp__footer'>
-        <Button text='Send' type='submit' color={COLOR} />
+        <Button text='Evniar' type='submit' color={COLOR} />
       </div>
     </form>
   );
