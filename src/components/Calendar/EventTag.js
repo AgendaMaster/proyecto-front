@@ -4,7 +4,9 @@ import '../../sass/components/calendar/EventTag.scss'
 export function EventTag ({ info, view, config }) {
 
   const getDate = (myDate) => {
-    return `${myDate.getDate()} - ${myDate.toLocaleString('default', { month: 'long' })}`;
+    console.log('getDate', myDate)
+    const dayName = myDate.toLocaleString('default', { day: '2-digit' })
+    return `${dayName} - ${myDate.toLocaleString('default', { month: 'long' })}`;
   }
 
   const getStartTime = (myDate) => `${myDate.toLocaleString('default', { hourCycle: 'h12', hour: '2-digit', minute: '2-digit' })}`;
@@ -35,22 +37,28 @@ export function EventTag ({ info, view, config }) {
   }
 
   const renderViewDaily = (info, config) => {
-    const itemHeight = convertTimeToHeight(info.start, info.end);
+    const startDate = new Date(info.startDate)
+    const endDate = new Date(info.endDate)
+
+
+    console.log('info::', info)
+    console.log('startDate ::', startDate)
+    const itemHeight = convertTimeToHeight(startDate, endDate);
     const extraClass = getExtraClass(itemHeight)
-    const top = convertTimeToPixel(info.start, config.heightPerHour) + 'px';
+    const top = convertTimeToPixel(startDate, config.heightPerHour) + 'px';
 
     return (<div
               className={`EventTag daily ${extraClass}`}
               style={{
-                backgroundColor:`${info.color}`,
-                borderLeftColor:`${info.border}`,
+                backgroundColor:`${info.bckColor}`,
+                borderLeftColor:`${info.borderColor}`,
                 top: top,
                 height: `${itemHeight}px`
               }}
             >
       <div className='EventTag-info'>
-        <p>{info.name }</p>
-        <p>{getDate(info.start)} {getStartTime(info.start)} - {getEndTime(info.end)}</p>
+        <p>{info.eventName }</p>
+        <p>{getDate(startDate)} {getStartTime(startDate)} - {getEndTime(endDate)}</p>
       </div>
       <div className='EventTag-avatar'>
         <div className='cover' style={{backgroundImage:`url(${info.avatar})`}}>
@@ -62,9 +70,9 @@ export function EventTag ({ info, view, config }) {
   }
 
   const renderViewWeek = (info, config) => {
-    const itemHeight = convertTimeToHeight(info.start, info.end, config.heightPerHour);
+    const itemHeight = convertTimeToHeight(info.startDate, info.endDate, config.heightPerHour);
     const extraClass = getExtraClass(itemHeight)
-    const top = convertTimeToPixel(info.start, config.heightPerHour) + 'px';
+    const top = convertTimeToPixel(info.startDate, config.heightPerHour) + 'px';
 
     return (<div
               key={Math.random() }

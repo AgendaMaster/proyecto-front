@@ -7,7 +7,7 @@ import SignUp from '../pages/SignUp';
 import NotFound from '../pages/NotFound';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
-import { CalendarPage } from '../pages/Calendar';
+import CalendarPage from '../pages/Calendar';
 import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
 export const RenderRoutes = () => {

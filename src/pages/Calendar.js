@@ -1,12 +1,19 @@
 import React from 'react';
 import { Calendar } from '../components/Calendar/'
-import {Layout} from '../components/layout' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
-export class CalendarPage extends React.Component {
+import { getEvents } from '../api';
+
+// REDUX
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { setCalendarEvents, setCalendarCurrentDay } from '../actions/calendarActions';
+
+class CalendarPage extends React.Component {
   constructor(props) {
     super(props);
+    this.getAllEvents()
     this.state = {
       day: {
         name: new Date().toLocaleDateString('default', { weekday: 'long' }),
@@ -41,41 +48,68 @@ export class CalendarPage extends React.Component {
     this.setState({ actualView: event.target.value });
   }
 
-  handleClick = (event) => {
+  getAllEvents = async () => {
+    try {
+      const info = await getEvents();
+      console.log('info::', info)
+      // this.setState({ events: info.data });
+      this.props.setCalendarEvents(info.data)
+    } catch (error) {
+      // TODO: Propper error handling
+      console.error(error);
+      alert('Ups, parece que tienes credenciales incorrectos');
+    }
+  }
+
+  handleClick = async (event) => {
     let newDay = this.state.day;
     let today = new Date();
-    event.target.value === 'back' ? newDay.count -= 1 : newDay.count += 1;
+    console.log('event.target.value ::', event.currentTarget.getAttribute('value'))
+    event.currentTarget.getAttribute('value') === 'back' ? newDay.count -= 1 : newDay.count += 1;
     today.setDate(today.getDate() + newDay.count )
     newDay.date = today
-    this.setState({ day: newDay });
+    console.log('newDay::', newDay)
+    this.props.setCalendarCurrentDay(newDay)
+    //await new Promise(resolve => this.setState({ day: newDay }, () => resolve())) 
+    this.setState(state => ({...state, day: newDay }));
   }
 
   render () {
     return (
-      <Layout>
-        <div className="Calendar">
-          <div className="Calendar-header">
-            <h2>{this.state.day.date.toLocaleDateString('default', { weekday: 'long', day: '2-digit', month: 'long' })} </h2>
-            
-            <div>
-              <div className="Calendar-header-steps">
-                <FontAwesomeIcon icon={faChevronLeft} onClick={this.handleClick} value="next" />
-                <FontAwesomeIcon icon={faChevronRight} onClick={this.handleClick} value="back" />
-              </div>
-              <div className="Calendar-header-buttons">
-                <select onChange={this.handleChange}>
-                  {
-                    this.state.viewCalendar.map(view => (<option key={view.id} value={view.id} >{view.name}</option>))
-                  }
-                </select>
-              </div>
+      <div className="Calendar">
+        <div className="Calendar-header">
+          <h2>{this.state.day.date.toLocaleDateString('default', { weekday: 'long', day: '2-digit', month: 'long' })} </h2>
+          
+          <div>
+            <div className="Calendar-header-steps">
+              <FontAwesomeIcon icon={faChevronLeft} onClick={this.handleClick} value="back" />
+              <FontAwesomeIcon icon={faChevronRight} onClick={this.handleClick} value="next" />
+            </div>
+            <div className="Calendar-header-buttons">
+              <select onChange={this.handleChange}>
+                {
+                  this.state.viewCalendar.map(view => (<option key={view.id} value={view.id} >{view.name}</option>))
+                }
+              </select>
             </div>
           </div>
-          <div className="Calendar-container">
-            <Calendar view={this.state.actualView} config={this.state.config} />
-          </div>
         </div>
-      </Layout>
+        <div className="Calendar-container">
+          <Calendar view={this.state.actualView} config={this.state.config} day={this.state.day} />
+        </div>
+      </div>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    events: state.events
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ setCalendarEvents, setCalendarCurrentDay }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CalendarPage);

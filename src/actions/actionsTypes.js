@@ -2,3 +2,6 @@ export const SET_USER = 'SET_USER';
 export const SET_TOKEN = 'SET_TOKEN';
 export const SET_SUGGESTIONS = 'SET_SUGGESTIONS';
 export const LOGOUT = 'LOGOUT';
+
+export const SET_CALENDAR_EVENTS = 'SET_CALENDAR_EVENTS';
+export const SET_CALENDAR_CURRENT_DAY = 'SET_CALENDAR_CURRENT_DAY';

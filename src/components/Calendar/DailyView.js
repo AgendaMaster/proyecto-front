@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Link} from 'react-router-dom';
 import { EventTag } from './EventTag'
 import '../../sass/components/calendar/DailyView.scss'
 
-export function DailyView({ config }) {
+// REDUX
+import { connect } from 'react-redux';
 
+const DailyView = ({ config, events, day, current_day }) => {
+  const [myEvents, setMyEvents] = useState([]);
+
+  console.log('DailyView :: day ::', day)
   const MOCK_EVENT_TAG = [{
     id: 'evento1',
     name: 'Evento 1',
@@ -55,6 +60,20 @@ export function DailyView({ config }) {
     return `${result.toLocaleString('default', { hourCycle: 'h12', hour: '2-digit', minute: '2-digit' })}`
   }
 
+  useEffect(() => {
+    if(events.length > 0) {
+      setMyEvents(events)
+      console.log('day::', current_day)
+    }
+  })
+
+  const compareDate = (dateOne, dateTwo) => {
+    const one = dateOne.split(' ')[0]
+    const two = dateTwo.getFullYear() + "-" + (dateTwo.toLocaleDateString('default', { month: '2-digit' })) + "-" + dateTwo.toLocaleDateString('default', { day: '2-digit' })
+
+    console.log(one + ' === ' + two)
+    return one === two
+  }
 
   return (
     <div className='DailyView'>
@@ -67,11 +86,25 @@ export function DailyView({ config }) {
       </div>
       <div className='DailyView-item-event'>
       {
-        MOCK_EVENT_TAG.map(evento => <Link to="/event/1">
-          <EventTag key={evento.id} info={ evento } view={'daily'} config={config} />
-        </Link>)
+        myEvents.length > 0 && myEvents.map(evento =>{
+          if(compareDate(evento.startDate, day.date)) {
+            return  <Link to="/event/1">
+              <EventTag key={evento._id} info={ evento } view={'daily'} config={config} />
+            </Link>
+          }
+        })
       }
       </div>
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  console.log('current_day ::', state.current_day)
+  return {
+    events: state.events,
+    current_day: state.current_day
+  }
+}
+
+export default connect(mapStateToProps, null)(DailyView);
