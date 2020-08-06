@@ -1,0 +1,80 @@
+.eventos{
+    text-align-last: center;
+}
+.eventImg{
+    width: 70%;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}
+.keyword{
+    display: grid;
+    grid-template-columns: 50% 55%;
+    grid-template-rows: 50% 50%;
+    margin-bottom: 25px;
+}
+.eventWord{
+    display: flex;
+    justify-content: space-around;
+}
+.ellipseEvent{
+    width: 81px;
+}
+.orador{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    color: #7556D6;
+    opacity: 0.8;
+}
+.titleEvent{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #3B086A;
+    text-align-last: left;
+}
+.descriptionEvent{
+    width: 70%;
+    display: inline-block;
+}
+.desEvent{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    color: #676767;
+    margin-bottom: 25px;
+    text-align-last: left;
+}
+.commentEvent{
+    background: rgba($color: #9b51e0, $alpha: 0.2);
+    border-radius: 16px;
+    width: 70%;
+    display: inline-flex;
+}
+.desCommentEvent{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+    color: #3B086A;
+    text-align: center;
+}
+.publicacion{
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+}
+.publicacion2{
+    border-radius: 16px;
+    width: 25%;
+}
