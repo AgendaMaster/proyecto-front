@@ -9,6 +9,8 @@ const initialStore = {
   token: null,
   user: null,
   suggestions: null,
+  events: [],
+  current_day: null
 };
 
 const persistConfig = {

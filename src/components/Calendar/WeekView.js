@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { EventTag } from './EventTag'
 import '../../sass/components/calendar/DailyWeek.scss'
 
-export function WeekView({ config }) {
+// REDUX
+import { connect } from 'react-redux';
+
+const WeekView = ({ config, events }) => {
+  const [myEvents, setMyEvents] = useState([]);
+  const [myWeek, setMyWeek] = useState([]);
+
   const MOCK_DAYS = [
     'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'
   ]
@@ -56,6 +62,40 @@ export function WeekView({ config }) {
     return `${result.toLocaleString('default', { hourCycle: 'h12', hour: '2-digit', minute: '2-digit' })}`
   }
 
+  const getTodayWeek = async () => {
+    const arrayDays = [0,1,2,3,4,5,6]
+    let result = await arrayDays.map(e => {
+      let myDate = new Date()
+      let distance = e - myDate.getDay()
+      myDate.setDate(myDate.getDate() + distance)
+      return {
+        e,
+        id: myDate.valueOf(),
+        date: myDate,
+        name: myDate.toLocaleDateString('default', { weekday:'long' })
+      }
+    })
+
+    console.log(result)
+
+    setMyWeek(result)
+  }
+
+  useEffect(() => {
+    if(events.length > 0) {
+      setMyEvents(events)
+      getTodayWeek()
+    }
+  }, [])
+
+  const compareDate = (dateOne, dateTwo) => {
+    const one = dateOne.split(' ')[0]
+    const two = dateTwo.getFullYear() + "-" + (dateTwo.toLocaleDateString('default', { month: '2-digit' })) + "-" + dateTwo.toLocaleDateString('default', { day: '2-digit' })
+
+    console.log(one + ' === ' + two)
+    return one === two
+  }
+
 
   return (
     <div className='DailyWeek'>
@@ -67,12 +107,28 @@ export function WeekView({ config }) {
       }
       </div>
       {
-        MOCK_DAYS.map(day => <div key={day} className={`DailyWeek-item-event ${day}`}>
-            <p>{day}</p>
-            { MOCK_EVENT_TAG.map(evento => <EventTag key={evento.id} info={ evento } view={'week'} config={config} />) }
+        myWeek.map(({ id, name, date }) => <div key={id} className={`DailyWeek-item-event ${id}`}>
+            <p>{name}</p>
+            { 
+              myEvents.length > 0 && myEvents.map(evento => {
+                console.log('evento::', evento.startDate)
+                console.log('date::', date)
+                if(compareDate(evento.startDate, date)) {
+                  return <EventTag key={evento._id} today={date} info={ evento } view={'daily'} config={config} />
+                }
+              })
+            }
           </div>
         )
       }
     </div>
   );
 }
+
+const mapStateToProps = state => {
+  return {
+    events: state.events
+  }
+}
+
+export default connect(mapStateToProps, null)(WeekView);
