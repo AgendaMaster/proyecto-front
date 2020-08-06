@@ -8,11 +8,16 @@ const RightNav = ({ open }) => {
       <ul className={openBtn}>
         <Link  to='/'>
         <li>Inicio</li>
-      </Link>
-        <li>Eventos</li>
-        <li>Tickets</li>
-        <li>Calendario</li>
-        <li>Cerrar sesión</li>
+        </Link>
+        <Link  to='/eventos'>
+          <li>Eventos</li>
+        </Link>
+        <Link  to='/CalendarPage'>
+          <li>Calendario</li>
+        </Link>
+        <Link  to='/'>
+          <li>Cerrar sesión</li>
+        </Link>
         <li>
           <input placeholder='Search' className='SearchBar-input' type='text' />
         </li>

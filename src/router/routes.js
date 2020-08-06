@@ -4,6 +4,7 @@ import { faHome, faUser, faReceipt } from '@fortawesome/free-solid-svg-icons';
 
 import Login from './../pages/Login';
 import SignUp from '../pages/SignUp';
+import NotFound from '../pages/NotFound';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
 import { CalendarPage } from '../pages/Calendar';
@@ -26,7 +27,8 @@ export const RenderRoutes = () => {
       })}
       <Route component={CalendarPage} exact path='/CalendarPage'/>
       <Route component={Login} exact path='/login'/>
-      <Route component={() => <h1>Not Found!</h1>} />
+      <Route component={SignUp} exact path='/SignUp'/>
+      <Route component={NotFound} />
     </Switch>
   );
 };

@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { StyledTitle, FormGroup } from '../components/base';
 
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import { signUp } from '../api/';
 import '../sass/pages/SignUp.scss';
 import Button from '../components/base/Button';
+import Logo from '../assets/images/logo.svg';
+import {Footer} from '../components/layout/Footer'
+import '../sass/components/layout-NotUSer/index.scss';
 
 const COLOR = 'primary';
 
@@ -51,6 +54,14 @@ const SignUp = () => {
   };
 
   return (
+    <div className="Layout_NotUser">
+    <div className="Layout_NotUser-header">
+    <Link to='/'>
+      <div className="Layout_NotUser-header-logo">
+        <img src={Logo} alt='App logo (colorful brain)' /> UDIARY
+      </div>
+      </Link>
+    </div>
     <form className='SignUp' onSubmit={handleSubmit}>
       <StyledTitle text='Sign Up' level={1} color={COLOR} />
       <div className='SignUp__form'>
@@ -108,6 +119,8 @@ const SignUp = () => {
         <Button text='Send' type='submit' color={COLOR} />
       </div>
     </form>
+      <Footer/>
+    </div>
   );
 };
 
