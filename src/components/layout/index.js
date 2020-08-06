@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { AppHeader } from './AppHeader';
 import { NavDrawer } from './NavDrawer';
@@ -13,12 +14,15 @@ const suggestions = new Array(4).fill({
 });
 
 export function Layout({ children }) {
+  const { pathname } = useLocation();
+  const currentRoute = ROUTES.find((route) => route.path === pathname) || {};
+  console.log(currentRoute);
   return (
     <div className='Layout'>
-      <AppHeader />
-      <NavDrawer routes={ROUTES[1].routes} />
+      <AppHeader auth={currentRoute.auth} />
+      {currentRoute.auth && <NavDrawer routes={ROUTES[1].routes} />}
       <main className='Layout-main'>{children}</main>
-      <CalendarDrawer suggestions={suggestions} />
+      {currentRoute.auth && <CalendarDrawer suggestions={suggestions} />}
       <Footer />
     </div>
   );
