@@ -76,7 +76,7 @@ export function Landing() {
               <li>Equipo</li>
               <li>Contactanos</li>
               <li>Iniciar Sesion</li>
-              <li class="landing-header-menu-register">Registrarme</li>
+              <li className="landing-header-menu-register">Registrarme</li>
             </ul>
           </nav>
         </div>

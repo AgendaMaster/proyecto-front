@@ -7,6 +7,7 @@
   letter-spacing: 0.8em;
   margin-top: 2em;
   margin-bottom: 2em;
+  width: 100%;
   font-size: $size;
   &:after {
     content: attr(data-title);
