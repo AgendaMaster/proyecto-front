@@ -26,16 +26,19 @@ const SignUp = () => {
     updatedFormData[name] = value;
     setFormData(updatedFormData);
   };
-  // TODO: Integrate this with backend.
-  const handleSubmit = () => console.log('Submitting...');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
-    <div className='SignUp'>
+    <form className='SignUp' onSubmit={handleSubmit}>
       <StyledTitle text='Sign Up' level={1} color={COLOR} />
       <div className='SignUp__form'>
         <div className='SignUp__section'>
           <FormGroup label='First Name' color={COLOR}>
             <input
+              required
               type='text'
               onChange={handleChangeInput}
               value={formData.firstName}
@@ -44,6 +47,7 @@ const SignUp = () => {
           </FormGroup>
           <FormGroup label='Last Name' color={COLOR}>
             <input
+              required
               type='text'
               onChange={handleChangeInput}
               value={formData.lastName}
@@ -54,6 +58,7 @@ const SignUp = () => {
         <div className='SignUp__section'>
           <FormGroup label='E-mail Address' color={COLOR}>
             <input
+              required
               type='text'
               onChange={handleChangeInput}
               value={formData.email}
@@ -79,9 +84,9 @@ const SignUp = () => {
         </div>
       </div>
       <div className='SignUp__footer'>
-        <Button text='Send' onClick={handleSubmit} color={COLOR} />
+        <Button text='Send' type='submit' color={COLOR} />
       </div>
-    </div>
+    </form>
   );
 };
 
