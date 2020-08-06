@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { StyledTitle, FormGroup } from '../components/base';
 
+import { useHistory } from 'react-router-dom';
+
+import { signUp } from '../api/';
 import '../sass/pages/SignUp.scss';
 import Button from '../components/base/Button';
 
@@ -15,6 +18,8 @@ const SignUp = () => {
     confirmPassword: '',
   });
 
+  const history = useHistory();
+
   const handleChangeInput = (e) => {
     const {
       target: {
@@ -26,16 +31,33 @@ const SignUp = () => {
     updatedFormData[name] = value;
     setFormData(updatedFormData);
   };
-  // TODO: Integrate this with backend.
-  const handleSubmit = () => console.log('Submitting...');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const { password, confirmPassword, firstName, lastName, email } = formData;
+    if (password !== confirmPassword) {
+      // TODO: implement an user friendly message.
+      return alert('Las contraseñas no coinciden.');
+    }
+
+    try {
+      await signUp({ firstName, lastName, email, password, isCompany: false });
+      history.push('login');
+    } catch (error) {
+      // TODO: Propper error handling
+      console.error(error);
+      alert('Ops, algo salió mal.');
+    }
+  };
 
   return (
-    <div className='SignUp'>
+    <form className='SignUp' onSubmit={handleSubmit}>
       <StyledTitle text='Sign Up' level={1} color={COLOR} />
       <div className='SignUp__form'>
         <div className='SignUp__section'>
           <FormGroup label='First Name' color={COLOR}>
             <input
+              required
               type='text'
               onChange={handleChangeInput}
               value={formData.firstName}
@@ -44,6 +66,7 @@ const SignUp = () => {
           </FormGroup>
           <FormGroup label='Last Name' color={COLOR}>
             <input
+              required
               type='text'
               onChange={handleChangeInput}
               value={formData.lastName}
@@ -54,6 +77,7 @@ const SignUp = () => {
         <div className='SignUp__section'>
           <FormGroup label='E-mail Address' color={COLOR}>
             <input
+              required
               type='text'
               onChange={handleChangeInput}
               value={formData.email}
@@ -62,6 +86,7 @@ const SignUp = () => {
           </FormGroup>
           <FormGroup label='Password' color={COLOR}>
             <input
+              required
               type='password'
               onChange={handleChangeInput}
               value={formData.password}
@@ -70,6 +95,7 @@ const SignUp = () => {
           </FormGroup>
           <FormGroup label='Confirm Password' color={COLOR}>
             <input
+              required
               type='password'
               onChange={handleChangeInput}
               value={formData.confirmPassword}
@@ -79,9 +105,9 @@ const SignUp = () => {
         </div>
       </div>
       <div className='SignUp__footer'>
-        <Button text='Send' onClick={handleSubmit} color={COLOR} />
+        <Button text='Send' type='submit' color={COLOR} />
       </div>
-    </div>
+    </form>
   );
 };
 

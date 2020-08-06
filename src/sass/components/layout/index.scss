@@ -5,11 +5,18 @@
   grid-template:
     'header   header header   ' $header-size
     'nav      main   calendar ' 1fr
-    'footer   footer footer   ' 95px /
+    'footer   footer footer   ' 75px /
     80px 1fr 300px;
   min-height: 100vh;
   &-main {
     grid-area: main;
+  }
+  &.basic {
+    grid-template:
+      'header   header header   ' $header-size
+      'main      main   main ' 1fr
+      'footer   footer footer   ' 75px /
+      80px 1fr 300px;
   }
 }
 
