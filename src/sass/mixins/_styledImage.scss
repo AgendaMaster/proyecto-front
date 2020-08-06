@@ -1,0 +1,30 @@
+@mixin imageLeft() {
+  position: relative;
+  margin-bottom: 50px;
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: -40px;
+    font-size: 8em;
+    letter-spacing: initial;
+    opacity: 0.04;
+    z-index: -1;
+    font-weight: 700;
+  }
+}
+
+@mixin imageRight() {
+  position: relative;
+  margin-bottom: 50px;
+  &:after {
+    content: attr(data-text);
+    position: absolute;
+    top: -40px;
+    font-size: 8em;
+    letter-spacing: initial;
+    opacity: 0.04;
+    z-index: -1;
+    font-weight: 700;
+    left: -40px;
+  }
+}

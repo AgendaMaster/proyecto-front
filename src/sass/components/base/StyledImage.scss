@@ -1,0 +1,13 @@
+@import '../../common/variables';
+@import '../../mixins/styledImage';
+
+.Image {
+  &--direction {
+    &-left {
+      @include imageLeft()
+    }
+    &-right {
+      @include imageRight()
+    }
+  }
+}
