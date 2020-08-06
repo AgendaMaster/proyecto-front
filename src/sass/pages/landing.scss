@@ -1,5 +1,5 @@
-@import '../common/variables';
-@import '../common/utils';
+@import "../common/variables";
+@import "../common/utils";
 
 a {
   color: white;
@@ -91,7 +91,7 @@ a {
           rgba(37, 37, 37, 0.9) 10%,
           rgba(196, 196, 196, 0) 55%
         ),
-        url('../../assets/images/stock-photo.jpg');
+        url("../../assets/images/img-background.jpg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;

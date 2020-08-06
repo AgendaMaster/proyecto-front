@@ -21,7 +21,7 @@ const NoAuthComponent = ({
     return <Redirect to='/dashboard' />;
   }
 
-  return <Route component={Component} path={path} exact={exact} />;
+  return (<Route component={Component} path={path} exact={exact} />);
 };
 
 function mapStateToProps({ token, props }) {

@@ -5,12 +5,13 @@ import './../../sass/components/layout/CalendarDrawer.scss';
 
 export function CalendarDrawer({ suggestions = [] }) {
   return (
-    <aside className='CalendarDrawer'>
-      <div className='CalendarContainer'>
-      <h3>Calendar</h3>
-      <CalendarMini />
-      <hr />
-      <Suggestions suggestions={suggestions} />
-    </aside>
-  );
+      <div className='CalendarDrawer'>
+        <aside className='CalendarContainer'>
+        <h3>Calendar</h3>
+        <CalendarMini />
+        <hr />
+        <Suggestions suggestions={suggestions} />
+      </aside>
+      </div>
+  )
 }

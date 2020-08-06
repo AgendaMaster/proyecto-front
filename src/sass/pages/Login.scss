@@ -2,7 +2,7 @@
 
 .Login {
   max-width: 900px;
-  margin: auto;
+  margin: 0 20%;
   height: 100%;
   &__form {
     padding: 20px;
@@ -19,4 +19,12 @@
 
 .BackLink {
   color: $primary;
+}
+
+@media screen and (max-width: 620px) {
+  .Login {
+    max-width: 900px;
+    margin: 0;
+    height: 100%;
+  }
 }

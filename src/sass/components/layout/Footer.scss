@@ -1,4 +1,4 @@
-@import './../../common/variables';
+@import "./../../common/variables";
 .Footer {
   display: flex;
   align-items: center;
@@ -8,6 +8,7 @@
   background-color: $primary;
   font-size: 12px;
   padding: 0px 84px;
+  height: 100%;
   &-infoLink,
   .SocialMediaLink {
     margin-right: 15px;
