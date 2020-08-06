@@ -62,7 +62,7 @@ const ROUTES = [
     key: 'DASHBOARD',
     exact: true,
     icon: faHome,
-    component: Event,
+    component: CalendarPage,
     auth: true,
   },
   {
@@ -79,13 +79,6 @@ const ROUTES = [
     exact: true,
     icon: faReceipt,
     component: Event,
-    auth: true,
-  },
-  {
-    path: '/calendar',
-    key: 'CALENDAR',
-    exact: true,
-    component: CalendarPage,
     auth: true,
   },
   {

@@ -1,3 +1,5 @@
+@import '../common/variables';
+
 .eventos{
     text-align-last: center;
 }
@@ -11,6 +13,12 @@
     grid-template-columns: 50% 55%;
     grid-template-rows: 50% 50%;
     margin-bottom: 25px;
+    > a {
+        background-color: $secondary;
+        margin: 5px;
+        padding: 5px 10px;
+        border-radius: 20px;
+    }
 }
 .eventWord{
     display: flex;
@@ -59,6 +67,7 @@
     border-radius: 16px;
     width: 70%;
     display: inline-flex;
+    padding: 25px;
 }
 .desCommentEvent{
     font-family: Roboto;
