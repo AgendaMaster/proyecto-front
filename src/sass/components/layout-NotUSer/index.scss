@@ -4,10 +4,11 @@
   display: grid;
   grid-template:
     "header" $header-size
-    "content " 85vh
+    "content " 1fr
     "footer" 65px /1fr;
   max-width: 100%;
   margin: 0 auto;
+  min-height: 100vh;
   &-header {
     display: grid;
     grid-template-columns: 200px 1fr;

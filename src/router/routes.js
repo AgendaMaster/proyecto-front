@@ -13,6 +13,7 @@ import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 export const RenderRoutes = () => {
   return (
     <Switch>
+      
       {ROUTES.map(({ auth, exact, key, path, redirect, component }) => {
         const AuthRoute = auth ? AuthenticatedRoute : UnauthenticatedRoute;
         return (
@@ -25,9 +26,6 @@ export const RenderRoutes = () => {
           />
         );
       })}
-      <Route component={CalendarPage} exact path='/CalendarPage'/>
-      <Route component={Login} exact path='/login'/>
-      <Route component={SignUp} exact path='/SignUp'/>
       <Route component={NotFound} />
     </Switch>
   );

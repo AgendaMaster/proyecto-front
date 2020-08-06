@@ -21,9 +21,8 @@ export function Layout({ children }) {
   return (
     <div className={`Layout ${authRoute ? '' : 'basic'}`}>
       <Burger />
-      <AppHeader />
       <AppHeader auth={authRoute} />
-      {authRoute && <NavDrawer routes={ROUTES[1].routes} />}
+      {/* {authRoute && <NavDrawer routes={ROUTES[1].routes} />} */}
       <main className='Layout-main'>{children}</main>
       {authRoute && <CalendarDrawer suggestions={suggestions} />}
       <Footer />

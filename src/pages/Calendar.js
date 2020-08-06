@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar } from '../components/Calendar/'
+import {Layout} from '../components/layout' 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -51,28 +52,30 @@ export class CalendarPage extends React.Component {
 
   render () {
     return (
-      <div className="Calendar">
-        <div className="Calendar-header">
-          <h2>{this.state.day.date.toLocaleDateString('default', { weekday: 'long', day: '2-digit', month: 'long' })} </h2>
-          
-          <div>
-            <div className="Calendar-header-steps">
-              <FontAwesomeIcon icon={faChevronLeft} onClick={this.handleClick} value="next" />
-              <FontAwesomeIcon icon={faChevronRight} onClick={this.handleClick} value="back" />
-            </div>
-            <div className="Calendar-header-buttons">
-              <select onChange={this.handleChange}>
-                {
-                  this.state.viewCalendar.map(view => (<option key={view.id} value={view.id} >{view.name}</option>))
-                }
-              </select>
+      <Layout>
+        <div className="Calendar">
+          <div className="Calendar-header">
+            <h2>{this.state.day.date.toLocaleDateString('default', { weekday: 'long', day: '2-digit', month: 'long' })} </h2>
+            
+            <div>
+              <div className="Calendar-header-steps">
+                <FontAwesomeIcon icon={faChevronLeft} onClick={this.handleClick} value="next" />
+                <FontAwesomeIcon icon={faChevronRight} onClick={this.handleClick} value="back" />
+              </div>
+              <div className="Calendar-header-buttons">
+                <select onChange={this.handleChange}>
+                  {
+                    this.state.viewCalendar.map(view => (<option key={view.id} value={view.id} >{view.name}</option>))
+                  }
+                </select>
+              </div>
             </div>
           </div>
+          <div className="Calendar-container">
+            <Calendar view={this.state.actualView} config={this.state.config} />
+          </div>
         </div>
-        <div className="Calendar-container">
-          <Calendar view={this.state.actualView} config={this.state.config} />
-        </div>
-      </div>
+      </Layout>
     );
   }
 }
