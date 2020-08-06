@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { StyledTitle, FormGroup } from '../components/base';
 
+import { useHistory } from 'react-router-dom';
+
+import { signUp } from '../api/';
 import '../sass/pages/SignUp.scss';
 import Button from '../components/base/Button';
 
@@ -15,6 +18,8 @@ const SignUp = () => {
     confirmPassword: '',
   });
 
+  const history = useHistory();
+
   const handleChangeInput = (e) => {
     const {
       target: {
@@ -27,8 +32,22 @@ const SignUp = () => {
     setFormData(updatedFormData);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const { password, confirmPassword, firstName, lastName, email } = formData;
+    if (password !== confirmPassword) {
+      // TODO: implement an user friendly message.
+      return alert('Las contraseñas no coinciden.');
+    }
+
+    try {
+      await signUp({ firstName, lastName, email, password, isCompany: false });
+      history.push('login');
+    } catch (error) {
+      // TODO: Propper error handling
+      console.error(error);
+      alert('Ops, algo salió mal.');
+    }
   };
 
   return (
@@ -67,6 +86,7 @@ const SignUp = () => {
           </FormGroup>
           <FormGroup label='Password' color={COLOR}>
             <input
+              required
               type='password'
               onChange={handleChangeInput}
               value={formData.password}
@@ -75,6 +95,7 @@ const SignUp = () => {
           </FormGroup>
           <FormGroup label='Confirm Password' color={COLOR}>
             <input
+              required
               type='password'
               onChange={handleChangeInput}
               value={formData.confirmPassword}
