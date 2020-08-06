@@ -1,0 +1,47 @@
+@import '../../common/variables';
+@import '../../mixins/burguerBtn';
+
+.Burger {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .Burger {
+    @include burgerBtn;
+    & div {
+      background-color: $primary;
+
+      &:nth-child(1) {
+        transform: rotate(0);
+      }
+
+      &:nth-child(2) {
+        transform: translateX(0);
+      }
+
+      &:nth-child(3) {
+        transform: rotate(0);
+      }
+    }
+
+
+    &-open {
+      @include burgerBtn;
+      & div {
+        background-color: $grey;
+        &:nth-child(1) {
+          transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+}

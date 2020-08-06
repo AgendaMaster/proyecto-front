@@ -6,6 +6,7 @@ import { NavDrawer } from './NavDrawer';
 import { CalendarDrawer } from './CalendarDrawer';
 import { Footer } from './Footer';
 import ROUTES from './../../router/routes';
+import Burger from './Burger'
 import './../../sass/components/layout/index.scss';
 
 const suggestions = new Array(4).fill({
@@ -19,6 +20,8 @@ export function Layout({ children }) {
     ROUTES.find((route) => route.path === pathname) || {};
   return (
     <div className={`Layout ${authRoute ? '' : 'basic'}`}>
+      <Burger />
+      <AppHeader />
       <AppHeader auth={authRoute} />
       {authRoute && <NavDrawer routes={ROUTES[1].routes} />}
       <main className='Layout-main'>{children}</main>

@@ -32,33 +32,33 @@
         &-event {
           //background-color: green;
           position: relative;
-          background-image: 
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54),
-            linear-gradient(#004C54,#004C54);
-          background-size:100% 1px ;
-          background-repeat:no-repeat;
+          background-image:
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54),
+            linear-gradient(#004C54, #004C54);
+          background-size: 100% 1px;
+          background-repeat: no-repeat;
           background-position:
             0 60px,
             0 180px,
@@ -87,6 +87,21 @@
 
           div {
             min-height: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .Calendar {
+    &-container {
+      .DailyView {
+        column-gap: 0px;
+        &-item {
+          &-hour {
+            align-items: flex-start;
           }
         }
       }

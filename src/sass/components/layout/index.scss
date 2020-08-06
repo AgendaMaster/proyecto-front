@@ -1,21 +1,24 @@
-@import './../../common/variables';
+@import "./../../common/variables";
 
 .Layout {
   display: grid;
   grid-template:
-    'header   header header   ' $header-size
-    'nav      main   calendar ' 1fr
-    'footer   footer footer   ' 75px /
+    "header   header header   " $header-size
+    "nav      main   calendar " 86vh
+    "footer   footer footer   " 65px /
     80px 1fr 300px;
   min-height: 100vh;
   &-main {
     grid-area: main;
+    margin-bottom: 40px;
+    max-height: 100%;
+    overflow: scroll;
   }
   &.basic {
     grid-template:
-      'header   header header   ' $header-size
-      'main      main   main ' 1fr
-      'footer   footer footer   ' 75px /
+      "header   header header   " $header-size
+      "main      main   main " 1fr
+      "footer   footer footer   " 75px /
       80px 1fr 300px;
   }
 }
@@ -33,4 +36,41 @@
 }
 .Footer {
   grid-area: footer;
+}
+
+@media screen and (max-width: 780px) {
+  .Layout {
+    grid-template:
+      "header   header header   " $header-size
+      "nav      main  main" 2fr
+      "nav calendar calendar" 420px
+      "footer footer footer" 65px /
+      80px 1fr 300px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .Layout {
+    grid-template:
+      "header header" $header-size
+      "main main" 1fr
+      "calendar calendar" 800px
+      "footer footer" 150px/1fr;
+  }
+  .NavDrawer {
+    display: none;
+  }
+  .Footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 84px;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: center;
+    &-socialMedia {
+      margin-top: 16px;
+      width: 100%;
+    }
+  }
 }
