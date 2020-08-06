@@ -1,4 +1,4 @@
-import { SET_USER, SET_TOKEN, SET_SUGGESTIONS } from './actionsTypes';
+import { SET_USER, SET_TOKEN, SET_SUGGESTIONS, LOGOUT } from './actionsTypes';
 
 export const setUser = (user) => ({
   type: SET_USER,
@@ -13,4 +13,8 @@ export const setToken = (token) => ({
 export const setSuggestions = (suggestions) => ({
   type: SET_SUGGESTIONS,
   payload: suggestions,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
 });

@@ -6,7 +6,7 @@ import Login from './../pages/Login';
 import SignUp from '../pages/SignUp';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
-import { CalendarPage } from '../pages/Calendar'
+import { CalendarPage } from '../pages/Calendar';
 import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
 export const RenderRoutes = () => {
@@ -46,7 +46,7 @@ const ROUTES = [
     exact: true,
     component: Login,
     auth: false,
-    redirect: false,
+    redirect: true,
   },
   {
     path: '/sign-up',
@@ -54,7 +54,7 @@ const ROUTES = [
     exact: true,
     component: SignUp,
     auth: false,
-    redirect: false,
+    redirect: true,
   },
   {
     path: '/dashboard',
