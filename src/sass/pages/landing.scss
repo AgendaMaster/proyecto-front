@@ -221,8 +221,8 @@ html {
       .team-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-gap: 20px;
-
+        grid-gap: 40px;
+        padding-top: 80px;
         .team-person {
           background-color: #f5f5f5;
           border-radius: 0 0 8px 8px;
@@ -233,11 +233,11 @@ html {
           cursor: pointer;
 
           &:hover {
-            background-color: $green-dark;
+            background-color: $primary;
             color: $white;
 
             img {
-              border-color: $green-dark;
+              border-color: $primary;
             }
           }
 
