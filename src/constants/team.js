@@ -20,6 +20,11 @@ export const TEAM_INFO = [
       avatar: 'https://avatars1.githubusercontent.com/u/58479621?s=400&u=417387b5049b4c1bb2551f16575ed42c50427e01&v=4'
     },
     {
+      name: 'Sebastian Gutierrez',
+      team: 'Frontend',
+      avatar: 'https://avatars0.githubusercontent.com/u/46927244?s=460&v=4'
+    },
+    {
       name: 'Santiago Duque',
       team: 'Backend',
       avatar: 'https://avatars0.githubusercontent.com/u/41799763?s=400&u=bb3e2c2bfa6e8602ec8d0efb33a667754c6eaceb&v=4'
@@ -38,5 +43,10 @@ export const TEAM_INFO = [
       name: 'Andrés Carrion',
       team: 'Backend',
       avatar: 'https://avatars3.githubusercontent.com/u/42750251?s=400&u=4b6ee47a1798be48a916b6cd2e1786b148b8cd52&v=4'
+    },
+    {
+      name: 'Luis Ruiz',
+      team: 'Backend',
+      avatar: 'https://avatars2.githubusercontent.com/u/20346676?s=460&v=4'
     },
   ];
