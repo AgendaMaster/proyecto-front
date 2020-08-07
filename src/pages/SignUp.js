@@ -119,7 +119,7 @@ const SignUp = () => {
         </div>
       </div>
       <div className='SignUp__footer'>
-        <Button text='Evniar' type='submit' color={COLOR} />
+        <Button text='Enviar' type='submit' color={COLOR} />
       </div>
     </form>
       <Footer/>

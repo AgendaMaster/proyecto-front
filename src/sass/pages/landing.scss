@@ -5,6 +5,10 @@ a {
   color: white;
 }
 
+html {
+  scroll-behavior: smooth
+}
+
 .landing {
   &-container {
     max-width: 1024px;
