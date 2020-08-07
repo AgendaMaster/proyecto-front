@@ -1,0 +1,55 @@
+@import '../../common/variables';
+
+.CalendarMini {
+  &-header {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    justify-items: center;
+
+    &__prev,
+    &__next {
+      cursor: pointer;
+
+      span {
+        padding: 0 10px;
+      }
+    }
+  }
+  &-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 5px;
+
+    &__labelMonth {
+      text-align: center;
+    }
+
+    &__days {
+      font-size: 15px;
+      text-align: center;
+      cursor: pointer;
+
+      &.active {
+        border-radius: 5px;
+        background-color: #005E6F;
+        color: #FFF;
+      }
+      &.today {
+        border-radius: 5px;
+        background-color: #08003D;
+        color: #FFF;
+      }
+
+      &:hover {
+        border-radius: 5px;
+        background-color: #0D005E;
+        color: #FFF;
+      }
+    }
+
+    .extra-days-class {
+      color: #CCC;
+    }
+  }
+}

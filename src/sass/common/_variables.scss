@@ -5,6 +5,7 @@ $primary-ligth: #5df4c9;
 $primary-dark: #004c54;
 
 $secondary: #9b51e0;
+$secondary-light: #eeebff;
 $secondary-dark: #3b086a;
 
 $app-background: #f5f6fa;
@@ -12,6 +13,10 @@ $grey: #f2f2f2;
 $grey-medium: #d3d3d3;
 $grey-dark: #676767;
 $white: #ffffff;
+
+$green-dark: #004C54;
+
+$purple-1: #9B51E0;
 
 $main-gradient: linear-gradient(180deg, $secondary 0%, $primary 100%);
 $grey-gradient: linear-gradient(
@@ -27,3 +32,11 @@ $header-size: 80px;
 $titles: Poppins;
 $paragraphs-primary: Poppins;
 $paragraphs-secondary: Roboto;
+
+$common-spacing: 5px;
+
+// LANDING PAGE
+$landing-title: #8563D5;
+$landing-bg-section-2: #5DF4C9;
+
+$breakpoint-tablet: 768px;

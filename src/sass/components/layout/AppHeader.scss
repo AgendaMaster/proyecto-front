@@ -1,14 +1,24 @@
-@import './../../common/variables';
+@import "./../../common/variables";
 .AppHeader {
   display: grid;
-  grid-template-columns: 100px 1fr 200px;
+  grid-template-columns: 100px 1fr 270px;
   align-items: center;
+  padding-right: 35px;
+  color: $primary;
   background-color: $white;
-  box-shadow: 0 1px 30px #71707080;
-  z-index: 10;
+  box-shadow: 0 1px 15px #71707080;
+  z-index: 120;
+  position: fixed;
+  height: 80px;
+  width: 100%;
   &-logo figure {
     margin: 0 auto;
     width: $header-size - 30px;
+  }
+  &-userInfo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
 }
 .SearchBar {
@@ -21,16 +31,65 @@
   border: 1px solid $grey-medium;
   border-radius: $header-size;
   &-input {
-    width: 100%;
-    height: 100%;
+    width: 74%;
+    height: 31px;
     padding: 0 30px;
     font-size: 1em;
-    color: $grey-medium;
+    color: #676767;
     outline: none;
     border: 0;
+    border-radius: 10px;
   }
   &-icon {
     position: absolute;
     left: 10px;
+  }
+}
+
+.Notifications {
+  margin-left: 20px;
+  color: $primary;
+  cursor: pointer;
+  a {
+    color: $primary;
+  }
+}
+
+.Account {
+  display: flex;
+  align-items: center;
+  &-profile {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  &-icon {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .AppHeader {
+    grid-template-columns: 100px 1fr;
+    &-userInfo {
+      display: none;
+    }
+  }
+  .SearchBar {
+    display: none;
+  }
+  .SearchBar-input {
+    width: 74%;
+    height: 31px;
+    padding: 0 30px;
+    font-size: 1em;
+    color: #676767;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    text-align: center;
   }
 }

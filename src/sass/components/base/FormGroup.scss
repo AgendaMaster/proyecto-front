@@ -1,0 +1,68 @@
+@import "../../common/variables";
+@import "../../mixins/input";
+
+.FormGroup {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 940px;
+  margin-bottom: 30px;
+  align-items: center;
+  color: $primary; //default
+  flex-wrap: nowrap;
+
+  span {
+    font-family: $titles;
+    font-weight: bold;
+    letter-spacing: $common-spacing;
+  }
+  input {
+    @include input($primary); //default
+  }
+  textarea {
+    @include input($primary); //default
+  }
+  &--color {
+    &-primary {
+      color: $primary;
+      input {
+        @include input($primary);
+      }
+      textarea {
+        @include input($primary);
+        text-align: start;
+        height: 4em;
+      }
+    }
+    &-secondary {
+      color: $secondary;
+      input {
+        @include input($secondary);
+      }
+      textarea {
+        @include input($secondary);
+        text-align: start;
+        height: 4em;
+      }
+    }
+  }
+  &__label {
+    width: 30%;
+  }
+  &__input {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .FormGroup {
+    flex-wrap: wrap;
+    &__label {
+      width: 100%;
+    }
+    &__input {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+}

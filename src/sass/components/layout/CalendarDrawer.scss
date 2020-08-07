@@ -1,0 +1,24 @@
+.CalendarDrawer {
+  padding: 20px;
+}
+
+@media screen and (max-width: 780px) {
+  .CalendarDrawer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    gap: 32px;
+    padding: 32px 16px;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .CalendarDrawer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+    padding: 32px 16px;
+    height: 100%;
+  }
+}

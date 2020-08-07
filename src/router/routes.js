@@ -1,13 +1,19 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Login } from './../pages/Login';
+import { faHome, faUser, faReceipt } from '@fortawesome/free-solid-svg-icons';
+
+import Login from './../pages/Login';
+import SignUp from '../pages/SignUp';
+import NotFound from '../pages/NotFound';
 import { Landing } from './../pages/Landing';
 import { Event } from './../pages/Event';
+import CalendarPage from '../pages/Calendar';
 import { AuthenticatedRoute, UnauthenticatedRoute } from './AuthRoutes';
 
 export const RenderRoutes = () => {
   return (
     <Switch>
+      
       {ROUTES.map(({ auth, exact, key, path, redirect, component }) => {
         const AuthRoute = auth ? AuthenticatedRoute : UnauthenticatedRoute;
         return (
@@ -20,8 +26,7 @@ export const RenderRoutes = () => {
           />
         );
       })}
-
-      <Route component={() => <h1>Not Found!</h1>} />
+      <Route component={NotFound} />
     </Switch>
   );
 };
@@ -34,7 +39,7 @@ const ROUTES = [
     exact: true,
     component: Landing,
     auth: false,
-    redirect: false,
+    redirect: true,
   },
   {
     path: '/login',
@@ -45,9 +50,34 @@ const ROUTES = [
     redirect: true,
   },
   {
+    path: '/sign-up',
+    key: 'SIGNUP',
+    exact: true,
+    component: SignUp,
+    auth: false,
+    redirect: true,
+  },
+  {
     path: '/dashboard',
     key: 'DASHBOARD',
     exact: true,
+    icon: faHome,
+    component: CalendarPage,
+    auth: true,
+  },
+  {
+    path: '/user',
+    key: 'USER',
+    exact: true,
+    icon: faUser,
+    component: Event,
+    auth: true,
+  },
+  {
+    path: '/ticket',
+    key: 'TICKET',
+    exact: true,
+    icon: faReceipt,
     component: Event,
     auth: true,
   },

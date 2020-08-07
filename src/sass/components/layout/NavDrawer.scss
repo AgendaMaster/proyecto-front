@@ -1,0 +1,41 @@
+@import './../../common/variables';
+
+.NavDrawer {
+  grid-area: nav;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  &-link {
+    color: $grey-medium;
+    &.active{
+        border-left: 5px solid $primary;
+        color: $primary;
+    }
+  }
+  &-nav {
+    position: fixed;
+    height: 224px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    align-content: space-around;
+    background: $white;
+    box-shadow: 8px 3px 30px -14px rgba(0, 0, 0, 0.3);
+    border-radius: 0px 20px 20px 0px;
+  }
+
+  &-link {
+    height: 33%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px $grey-medium;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

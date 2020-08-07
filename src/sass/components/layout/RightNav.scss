@@ -1,0 +1,19 @@
+@import '../../common/variables';
+@import '../../mixins/rightNav';
+
+.RightNav {
+  display: none;
+}
+
+@media (max-width: 450px) {
+  .RightNav {
+    @include RightNav;
+    transform: translateX(100%);
+
+    &-open {
+      @include RightNav;
+      transform: translateX(0);
+    }
+  }
+
+}

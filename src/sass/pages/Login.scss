@@ -1,0 +1,31 @@
+@import '../common/variables';
+
+.Login {
+  max-width: 900px;
+  margin: 0 20%;
+  height: 100%;
+  &__form {
+    padding: 20px;
+    margin-top: 10%;
+    min-width: 900px;
+  }
+  &__footer {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.BackLink {
+  color: $primary;
+}
+
+@media screen and (max-width: 620px) {
+  .Login {
+    max-width: 900px;
+    margin: 0;
+    height: 100%;
+  }
+}
