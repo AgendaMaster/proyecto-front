@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setSuggestions, setToken, setUser } from '../actions/authActions';
 
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { StyledTitle, FormGroup } from '../components/base';
 import Button from '../components/base/Button';
@@ -23,17 +23,14 @@ const Login = ({ setSuggestions, setToken, setUser }) => {
     password: '',
   });
 
-  const history = useHistory();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = formData;
     try {
       const { access_token, user, suggestions } = await login(email, password);
-      setToken(access_token);
       setUser(user);
       setSuggestions(suggestions);
-      history.replace('/dashboard');
+      setToken(access_token);
     } catch (error) {
       // TODO: Propper error handling
       console.error(error);

@@ -48,8 +48,10 @@
 
 .Notifications {
   margin-left: 20px;
-  &-icon {
-    transform: rotate(-20deg);
+  color: $primary;
+  cursor: pointer;
+  a {
+    color: $primary;
   }
 }
 

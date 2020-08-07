@@ -21,17 +21,12 @@ export const signUp = async (formData) => {
   return res.data;
 };
 
-export const getEvents = async () => {
-  let myToken
-
-  if (JSON.parse(localStorage.getItem('persist:root')) !== undefined) {
-    const { token } = JSON.parse(localStorage.getItem('persist:root'));
-    myToken = token.slice(1,-1)
-  }
+export const getEvents = async (token) => {
+  
 
   const res = await client.get('/events', {
     headers: {
-      Authorization: `Bearer ${myToken}`
+      Authorization: `Bearer ${token}`
   }});
   console.log('res.data', res.data)
   return res.data;

@@ -51,7 +51,7 @@ class CalendarPage extends React.Component {
 
   getAllEvents = async () => {
     try {
-      const info = await getEvents();
+      const info = await getEvents(this.props.token);
       console.log('info::', info)
       // this.setState({ events: info.data });
       this.props.setCalendarEvents(info.data)
@@ -105,9 +105,10 @@ class CalendarPage extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({events, token}) => {
   return {
-    events: state.events
+    events,
+    token
   }
 }
 

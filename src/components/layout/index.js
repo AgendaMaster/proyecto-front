@@ -2,7 +2,6 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { AppHeader } from './AppHeader';
-import { NavDrawer } from './NavDrawer';
 import { CalendarDrawer } from './CalendarDrawer';
 import { Footer } from './Footer';
 import ROUTES from './../../router/routes';

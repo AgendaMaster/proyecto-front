@@ -60,7 +60,6 @@ const DailyView = ({ config, events, day, current_day }) => {
 }
 
 const mapStateToProps = state => {
-  console.log('current_day ::', state.current_day)
   return {
     events: state.events,
     current_day: state.current_day
